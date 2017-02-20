@@ -1,0 +1,135 @@
+<html>
+<head>
+</head>
+<body style="text-align:center">
+<h1> Sorry...</h1>
+but wikiCommunity is not quite ready for its release, unlike Paul and Chris whose cross country bike trip started Monday morning May 19th.
+<br>
+<img src="wcFinalSmall.png">
+<br>
+In the meantime, <a href="http://blog.wikicommunity.org">check out the 
+blog</a>, or the <a 
+href="http://flickr.com/photos/9579724@N02/collections/72157605373359905/">pictures</a><br>
+
+<br>
+Real time tracking:<br>
+Suggestions on how to make the map better (i.e. coloring, time on each point ... I'm working on both)?  Please send to ideas to 
+suggestions@wikicommunity.org, thanks!<hr>
+
+  
+ 
+    <script 
+src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA5rSiNSxNrO2ZRkz7Kn85chQgPieDRzevs-0NI2utdy8M2R4YMxSGzIvgElD5bCgZcpMdWYjjqrixrA"
+      type="text/javascript"></script>
+
+<div style="text-align:center"><div id="map_canvas" style="width:90%;height:800px;"></div>
+</div>
+
+	<script type="text/javascript" src="MapIconMaker.js"></script>
+    <script type="text/javascript">
+
+// Create our "wc" marker icon
+var wcIcon = new GIcon();
+wcIcon.image = "http://wikicommunity.org/wcFinalSmall.png";
+wcIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+wcIcon.iconSize = new GSize(50, 50);
+wcIcon.shadowSize = new GSize(22, 20);
+wcIcon.iconAnchor = new GPoint(6, 20);
+wcIcon.infoWindowAnchor = new GPoint(5, 1);
+var redIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#ff0000"});
+var blueIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#0000ff"});
+var yellowIcon = MapIconMaker.createMarkerIcon({width: 50, height: 50, primaryColor: "#ffff00"});
+var greenIcon  = MapIconMaker.createMarkerIcon({width: 40, height: 40, 
+primaryColor: "#00ff00"});
+// Set up our GMarkerOptions object literal
+
+mostRecentIcon = { icon:wcIcon }
+todayIcon = { icon:yellowIcon }
+oddIcon = { icon:blueIcon }
+evenIcon = { icon:redIcon }
+firstIcon = { icon:greenIcon }
+
+var colorsArray = ["#ff0000","#00ff00","#0000ff","#ffff00"];
+var map = new GMap2(document.getElementById("map_canvas"));
+map.addControl(new GSmallMapControl());
+//map.addControl(new GMapTypeControl());
+//map.addControl(new GScaleControl());
+var point = new GLatLng(24.571841, -81.743785);
+map.setCenter(point, 12);
+
+
+GDownloadUrl("displayMarkers.php", function(data, responseCode) {
+  var xml = GXml.parse(data);
+  var markers = xml.documentElement.getElementsByTagName("marker");
+  var days = [];
+  //var today = markers[markers.length - 1].getAttribute("time").split("/")[1];
+  //need to concat month and day
+  var polyline = [];
+  for (var i = 0; i < markers.length; i++) {
+    var day = markers[i].getAttribute("time").split("/")[0] + markers[i].getAttribute("time").split("/")[1];
+    var point = new GLatLng(parseFloat(markers[i].getAttribute("lat")),parseFloat(markers[i].getAttribute("lon")));
+    polyline[i] = point;
+    if(day != lastDay){
+      days[day] = [];
+    }
+    var lastDay = day;
+    days[day][days[day].length] = point;
+
+
+    if(i==0){
+      map.addOverlay(new GMarker(point, firstIcon));
+    }else if(i == (markers.length - 1)){
+      map.addOverlay(new GMarker(point, mostRecentIcon));
+    }
+
+  }
+
+  for(i in days){
+    var dayPath = new GPolyline(days[i], colorsArray[0] ,7,.7);
+    var newLast = colorsArray.shift();
+    colorsArray[colorsArray.length] = newLast;
+    map.addOverlay(dayPath);
+
+   GEvent.addListener(dayPath, "click", function() { 
+    var myHtml = "<b>kevin</b>";
+    map.openInfoWindowHtml(days[i][0], myHtml)
+    })
+  
+  }
+
+var mostRecentLat = parseFloat(markers[(markers.length)-1].getAttribute("lat"));
+var mostRecentLon = parseFloat(markers[(markers.length)-1].getAttribute("lon"));
+var firstLat = parseFloat(markers[0].getAttribute("lat"));
+var firstLon = parseFloat(markers[0].getAttribute("lon"));
+curPoint = new GLatLng(mostRecentLat,mostRecentLon);
+
+
+/*
+window.setTimeout(function() {
+  map.panTo(curPoint);
+
+}, 4000);
+
+window.setTimeout(function() { map.setZoom(10); }, 6000 );
+
+*/
+
+map.setZoom(4);
+});
+
+
+</script>
+<hr>
+Listened to some suggestions, thanks for your responses.  Timing and mileage to come!  
+<hr>
+<img src="http://farm4.static.flickr.com/3149/2576201809_1930cfccc3.jpg">
+<img 
+src="http://farm4.static.flickr.com/3228/2518653034_00f32d7240.jpg">
+<img src="http://farm4.static.flickr.com/3053/2577032066_e7a767d980.jpg">
+<br>
+<a 
+href="http://flickr.com/photos/9579724@N02/collections/72157605373359905/">Click 
+here</a> to see the rest of the pictures.
+
+</body>
+</html>

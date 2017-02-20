@@ -1,0 +1,162 @@
+# translation of actions-inc.po to Hungarian
+# Hungarian translation of Drupal (actions.inc)
+# Copyright 2006 <feher.janos@mindworks.hu>
+# Generated from file: actions.inc,v 1.10 2006/07/12 22:54:42 jvandyk
+#
+# FEHÉR János <feher.janos _at- mindworks.hu>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: actions-inc\n"
+"POT-Creation-Date: 2007-02-20 10:52+0100\n"
+"PO-Revision-Date: 2007-02-21 11:50+0100\n"
+"Last-Translator: FEHÉR János <feher.janos _at- mindworks.hu>\n"
+"Language-Team: Hungarian <Drupal.hu Fordítási Csapat <forditas [at] drupal.hu>>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: actions.inc:22
+msgid "Set node id %id to Published"
+msgstr "%id tartalom közzé lett téve"
+
+#: actions.inc:27
+msgid "Publish node"
+msgstr "Tartalom közzététele"
+
+#: actions.inc:28;57;95;125;155;185;215
+msgid "Node"
+msgstr "Tartalom"
+
+#: actions.inc:56
+msgid "Unpublish node"
+msgstr "Taltalom elrejtése"
+
+#: actions.inc:68
+msgid "Set node id %id to Unpublished"
+msgstr "%id tartalom mostantól rejtett"
+
+#: actions.inc:94
+msgid "Make node sticky"
+msgstr "Tartalom kiemeltté tétele"
+
+#: actions.inc:106
+msgid "Made node id %id sticky"
+msgstr "%id tartalom kiemelt lett"
+
+#: actions.inc:124
+msgid "Make node unsticky"
+msgstr "Tartalom kiemelésének visszavonása"
+
+#: actions.inc:136
+msgid "Made node id %id unsticky"
+msgstr "%id tartalom kiemelése visszavonva"
+
+#: actions.inc:154
+msgid "Promote node to front page"
+msgstr "A tartalom a címlapra kerül"
+
+#: actions.inc:166
+msgid "Promoted node id %id to front page"
+msgstr "%id tartalom a címlapra került"
+
+#: actions.inc:184
+msgid "Remove node from front page"
+msgstr "Tartalom eltávolítása a címlapról"
+
+#: actions.inc:196
+msgid "Removed node id %id from front page"
+msgstr "%id tartalom el lett távolítva a címlapról"
+
+#: actions.inc:214
+msgid "Change node author"
+msgstr "Szerző megváltoztatása"
+
+#: actions.inc:227
+msgid "Changed owner of node %id to uid %uid"
+msgstr "%id tartalom tulajdonosi uid-je mostantól %uid"
+
+#: actions.inc:233
+msgid "The username of the user to which you would like to assign ownership."
+msgstr "Az új tulajdonos felhasználói neve."
+
+#: actions.inc:243;252
+msgid "Username"
+msgstr "Felhasználói név"
+
+#: actions.inc:266
+msgid "Please enter a valid username."
+msgstr "Érvényes felhasználói nevet kell megadni"
+
+#: actions.inc:300
+msgid "Send Email"
+msgstr "Email küldése"
+
+#: actions.inc:301
+msgid "Email"
+msgstr "Email"
+
+#: actions.inc:313;357;381;382
+msgid "%author"
+msgstr "%author"
+
+#: actions.inc:335
+msgid "Sent email to %recipient"
+msgstr "Az email el lett küldve az alábbi címzettnek: %recipient"
+
+#: actions.inc:338
+msgid "Unable to send email to %recipient"
+msgstr "Nem lehet emailt küldeni az alábbi címre: %recipient"
+
+#: actions.inc:353
+msgid "Recipient"
+msgstr "Címzett"
+
+#: actions.inc:357
+msgid ""
+"The email address to which the message should be sent OR enter %author if "
+"you would like to send an e-mail to the original author of the post."
+msgstr "Az email cím amelyre az üzenetet kell küldeni VAGY %author , ha a tartalom szerzőjéhez kell a levelet címezni."
+
+#: actions.inc:361
+msgid "Subject"
+msgstr "Tárgy"
+
+#: actions.inc:365
+msgid "The subject of the message."
+msgstr "A levél tárgya."
+
+#: actions.inc:369;431;440
+msgid "Message"
+msgstr "Üzenet"
+
+#: actions.inc:373
+msgid ""
+"The message that should be sent.  You may include the following variables: %"
+"site_name, %username, %node_url, %node_type, %title, %teaser, %body"
+msgstr "Az elküldendő üzenet. A szövegben az alábbi változókat lehet használni: %site_name, %username, %node_url, %node_type, %title, %teaser, %body"
+
+#: actions.inc:382
+msgid "Please enter a valid email address or %author."
+msgstr "Érvényes email vagy %author címet kell megadni."
+
+#: actions.inc:430
+msgid "Display message to current user"
+msgstr "Üzenet megjelenítése a jelenlegi felhasználónak"
+
+#: actions.inc:444
+msgid ""
+"The message to be displayed to the current user.  You may include the "
+"following variables: %site_name, %username, %node_url, %node_type, %title, %"
+"teaser, %body."
+msgstr "A jelenlegi felhasználónak megjelenítendő üzenet. A szövegben az alábbi változókat lehet használni: %site_name, %username, %node_url, %node_type, %title, %teaser, %body."
+
+#: actions.inc:22;68;106;136;166;196;227;335
+msgid "action"
+msgstr "művelet"
+
+#: actions.inc:338
+msgid "error"
+msgstr "hiba"
+

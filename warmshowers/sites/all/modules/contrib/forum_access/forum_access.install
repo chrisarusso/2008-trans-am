@@ -1,0 +1,37 @@
+<?php
+// $Id: forum_access.install 371 2007-10-18 15:47:58Z rfay $
+
+function forum_access_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("create table if not exists {forum_access} (
+        tid int(10) NOT NULL default 0,
+        rid int(10) NOT NULL default 0,
+        grant_view tinyint(1) unsigned NOT NULL default '0',
+        grant_update tinyint(1) unsigned NOT NULL default '0',
+        grant_delete tinyint(1) unsigned NOT NULL default '0',
+        grant_create tinyint(1) unsigned NOT NULL default '0',
+        KEY tid (tid),
+        KEY rid (rid)
+      );");
+      break;
+
+    case 'pgsql':
+      db_query("CREATE TABLE {forum_access} (
+        tid int NOT NULL DEFAULT 0,
+        rid int NOT NULL DEFAULT 0,
+        grant_view smallint NOT NULL DEFAULT 0,
+        grant_update smallint  NOT NULL DEFAULT 0,
+        grant_delete smallint NOT NULL DEFAULT 0,
+        grant_create smallint NOT NULL DEFAULT 0,
+        PRIMARY KEY (tid, rid)
+      );");
+      break;
+
+  }
+
+  db_query("UPDATE {system} SET weight = 2 WHERE name = 'forum_access'");
+
+  drupal_set_message("forum_access database tables created.");
+}

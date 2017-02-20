@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/warmshowers/!svn/ver/503/website/trunk/sites/all/modules/dev/wsmap
+END
+wsmap.info
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/warmshowers/!svn/ver/389/website/trunk/sites/all/modules/dev/wsmap/wsmap.info
+END
+zoom_calculation_from_area.xls
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/warmshowers/!svn/ver/315/website/trunk/sites/all/modules/dev/wsmap/zoom_calculation_from_area.xls
+END
+wsmap_clusterer.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/warmshowers/!svn/ver/474/website/trunk/sites/all/modules/dev/wsmap/wsmap_clusterer.js
+END
+wsmap_test-with-google-clusterer.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/warmshowers/!svn/ver/437/website/trunk/sites/all/modules/dev/wsmap/wsmap_test-with-google-clusterer.js
+END
+wsmap.module
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/warmshowers/!svn/ver/503/website/trunk/sites/all/modules/dev/wsmap/wsmap.module
+END
+wsmap.mysql
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/warmshowers/!svn/ver/315/website/trunk/sites/all/modules/dev/wsmap/wsmap.mysql
+END

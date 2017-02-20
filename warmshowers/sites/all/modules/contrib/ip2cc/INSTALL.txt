@@ -1,0 +1,30 @@
+## Description
+
+This is a simple APIs for obtaining country information by given
+an IPv4 address.
+
+## Requirements
+
+This module requires Drupal 5 or greater.
+
+## Installation
+
+1.  Extract the archive into `sites/all/modules`
+2.  Enable the module in `admin/build/modules`
+3.  Customize configurations in `admin/settings/ip2cc`
+
+## Update Database
+
+1.  Get the new `ipdb.mysql` from cvs or the archive
+2.  Go to `admin/settings/ip2cc/update`
+3.  Run the update by specifying `start` and `end` manually, e.g.,
+
+    *   1-15000
+    *   15001-30000
+    *   30001-45000
+    *   45001-60000
+    *   60001-75000
+    *   75001-77711
+
+    It is possible to specify `1-77711` if your hosting service allows
+    PHP to run longer enough.

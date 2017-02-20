@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo
+END
+FileRepoStatus.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/FileRepoStatus.php
+END
+OldLocalFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/OldLocalFile.php
+END
+LocalFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/LocalFile.php
+END
+UnregisteredLocalFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/UnregisteredLocalFile.php
+END
+FSRepo.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/FSRepo.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/File.php
+END
+ForeignDBFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/ForeignDBFile.php
+END
+LocalRepo.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/LocalRepo.php
+END
+ICRepo.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/ICRepo.php
+END
+RepoGroup.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/RepoGroup.php
+END
+ArchivedFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/ArchivedFile.php
+END
+FileRepo.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/FileRepo.php
+END
+ForeignDBRepo.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/ForeignDBRepo.php
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/filerepo/README
+END

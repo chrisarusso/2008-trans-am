@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree
+END
+CategoryPageSubclass.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryPageSubclass.php
+END
+CategoryTreePage.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTreePage.php
+END
+CategoryTree.i18n.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTree.i18n.php
+END
+CategoryTree.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTree.php
+END
+CategoryTree.css
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTree.css
+END
+CategoryTree.rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTree.rtl.css
+END
+install.settings
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/install.settings
+END
+CategoryTree.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTree.js
+END
+CategoryTreeFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/CategoryTreeFunctions.php
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/extensions/CategoryTree/README
+END

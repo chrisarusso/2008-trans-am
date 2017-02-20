@@ -1,0 +1,9 @@
+; $Id: blockcache.info 361 2007-10-18 13:35:52Z rfay $
+name = Block Cache
+description = Allows caching of blocks with configurable refresh settings.
+dependencies = block
+package = "High Performance"
+; Information added by drupal.org packaging script on 2007-04-11
+version = "5.x-1.x-dev"
+project = "blockcache"
+

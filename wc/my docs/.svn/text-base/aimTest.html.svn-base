@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aim testing</title>
+<script type="text/javascript" src="http://o.aolcdn.com/aim/web-aim/aimapi.js"></script>
+</head>
+<body>
+<div id="AIMBuddyListContainer" wim_key="il1n8gbw3TcW84Bv"></div>
+<a onclick="AIM.widgets.buddyList.launch();return false;" href="nojavascript.html">
+Launch my Buddy List</a>
+
+<a href="aim:GoIM?screenname=illmasterc">
+<img src="http://api.oscar.aol.com/presence/icon?k=il1cXxCw02b9q8-D&t=illmasterc" border="0"/> </a> 
+
+</body>
+</html>

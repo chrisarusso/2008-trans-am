@@ -1,0 +1,7 @@
+; $Id: actions.info,v 1.1 2006/10/15 21:17:07 jvandyk Exp $
+name = Actions
+description = Provides an API for modules to trigger and respond to Drupal actions.
+; Information added by drupal.org packaging script on 2007-05-03
+version = "5.x-1.x-dev"
+project = "actions"
+

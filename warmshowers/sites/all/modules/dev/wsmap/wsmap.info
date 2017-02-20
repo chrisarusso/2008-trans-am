@@ -1,0 +1,6 @@
+; $Id: wsmap.info 389 2007-10-21 22:38:15Z rfay $
+name = wsmap
+description = "Display all Warmshowers users on a google map"
+version = "$Revision: 389 $"
+dependencies = user_location wsuser ip2cc locationservices browscap
+package = Warmshowers.org

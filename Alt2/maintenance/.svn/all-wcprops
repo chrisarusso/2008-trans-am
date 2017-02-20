@@ -1,0 +1,815 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/wC2/!svn/ver/3/trunk/Alt2/maintenance
+END
+renamewiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/renamewiki.php
+END
+dumpUploads.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpUploads.php
+END
+mctest.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/mctest.php
+END
+mcc.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/mcc.php
+END
+dumpHTML.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpHTML.inc
+END
+interwiki.sql
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/interwiki.sql
+END
+testRunner.sql
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/testRunner.sql
+END
+wikipedia-interwiki.sql
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/wikipedia-interwiki.sql
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/update.php
+END
+dumpHTML.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpHTML.php
+END
+stats.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/stats.php
+END
+updateArticleCount.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateArticleCount.php
+END
+parserTests.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTests.inc
+END
+rebuildrecentchanges.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildrecentchanges.inc
+END
+fuzz-tester.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/fuzz-tester.php
+END
+mwdocgen.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/mwdocgen.php
+END
+initStats.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/initStats.inc
+END
+undelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/undelete.php
+END
+generateSitemap.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/generateSitemap.php
+END
+parserTests.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTests.php
+END
+rebuildrecentchanges.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildrecentchanges.php
+END
+attachLatest.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/attachLatest.php
+END
+refreshLinks.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/refreshLinks.inc
+END
+updateSearchIndex.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateSearchIndex.inc
+END
+initStats.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/initStats.php
+END
+mwdoxygen.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/mwdoxygen.cfg
+END
+refreshLinks.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/refreshLinks.php
+END
+updateSearchIndex.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateSearchIndex.php
+END
+getSlaveServer.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/getSlaveServer.php
+END
+attribute.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/attribute.php
+END
+removeUnusedAccounts.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/removeUnusedAccounts.inc
+END
+getLagTimes.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/getLagTimes.php
+END
+dumpLinks.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpLinks.php
+END
+parserTests.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTests.txt
+END
+moveBatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/moveBatch.php
+END
+changePassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/changePassword.php
+END
+refreshImageCount.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/refreshImageCount.php
+END
+cleanupDupes.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupDupes.inc
+END
+apache-ampersand.diff
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/apache-ampersand.diff
+END
+userOptions.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/userOptions.inc
+END
+fixUserRegistration.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/fixUserRegistration.php
+END
+removeUnusedAccounts.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/removeUnusedAccounts.php
+END
+nukePage.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/nukePage.inc
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/.htaccess
+END
+edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/edit.php
+END
+backup.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/backup.inc
+END
+userOptions.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/userOptions.php
+END
+namespace2sql.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/namespace2sql.php
+END
+clear_interwiki_cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/clear_interwiki_cache.php
+END
+nukePage.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/nukePage.php
+END
+importImages.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importImages.php
+END
+importDump.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importDump.php
+END
+nukeNS.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/nukeNS.php
+END
+fetchInterwiki.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/fetchInterwiki.pl
+END
+updateSpecialPages.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateSpecialPages.php
+END
+deleteBatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteBatch.php
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/README
+END
+dumpSisterSites.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpSisterSites.php
+END
+purgeOldText.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/purgeOldText.inc
+END
+updaters.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updaters.inc
+END
+cleanupWatchlist.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupWatchlist.php
+END
+importUseModWiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importUseModWiki.php
+END
+cleanupTitles.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupTitles.php
+END
+rebuildall.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildall.php
+END
+runJobs.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/runJobs.php
+END
+purgeOldText.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/purgeOldText.php
+END
+ourusers.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/ourusers.php
+END
+deleteArchivedRevisions.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteArchivedRevisions.inc
+END
+deleteOrphanedRevisions.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteOrphanedRevisions.inc.php
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/Doxyfile
+END
+rebuildInterwiki.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildInterwiki.inc
+END
+deleteDefaultMessages.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteDefaultMessages.php
+END
+userDupes.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/userDupes.inc
+END
+clear_stats.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/clear_stats.php
+END
+importImages.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importImages.inc.php
+END
+commandLine.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/commandLine.inc
+END
+deleteArchivedRevisions.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteArchivedRevisions.php
+END
+addwiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/addwiki.php
+END
+rebuildInterwiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildInterwiki.php
+END
+cleanupImages.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupImages.php
+END
+nextJobDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/nextJobDB.php
+END
+cleanupTable.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupTable.inc
+END
+importLogs.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importLogs.inc
+END
+findhooks.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/findhooks.php
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/Makefile
+END
+deleteImageMemcached.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteImageMemcached.php
+END
+createAndPromote.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/createAndPromote.php
+END
+fixTimestamps.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/fixTimestamps.php
+END
+benchmarkPurge.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/benchmarkPurge.php
+END
+importLogs.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importLogs.php
+END
+checkUsernames.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/checkUsernames.php
+END
+reassignEdits.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/reassignEdits.php
+END
+cleanupSpam.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupSpam.php
+END
+orphans.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/orphans.php
+END
+parserTestsParserTime.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTestsParserTime.php
+END
+counter.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/counter.php
+END
+deleteRevision.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteRevision.php
+END
+FiveUpgrade.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/FiveUpgrade.inc
+END
+deleteOldRevisions.inc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteOldRevisions.inc
+END
+parserTestsStaticParserHook.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTestsStaticParserHook.php
+END
+updateRestrictions.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateRestrictions.php
+END
+upgrade1_5.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/upgrade1_5.php
+END
+cleanupCaps.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/cleanupCaps.php
+END
+showJobs.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/showJobs.php
+END
+deleteOldRevisions.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteOldRevisions.php
+END
+rebuildtextindex.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildtextindex.inc
+END
+renderDump.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/renderDump.php
+END
+waitForSlave.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/waitForSlave.php
+END
+updateArticleCount.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/updateArticleCount.inc.php
+END
+wiktionary-interwiki.sql
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/wiktionary-interwiki.sql
+END
+reassignEdits.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/reassignEdits.inc.php
+END
+rebuildImages.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildImages.php
+END
+dumpInterwiki.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpInterwiki.inc
+END
+deleteArchivedFiles.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteArchivedFiles.inc
+END
+purgeList.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/purgeList.php
+END
+importTextFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/importTextFile.php
+END
+initEditCount.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/initEditCount.php
+END
+rebuildtextindex.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/rebuildtextindex.php
+END
+deleteOrphanedRevisions.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteOrphanedRevisions.php
+END
+eval.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/eval.php
+END
+dumpInterwiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpInterwiki.php
+END
+dumpBackup.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpBackup.php
+END
+deleteArchivedFiles.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/deleteArchivedFiles.php
+END
+namespaceDupes.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/namespaceDupes.php
+END
+showStats.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/showStats.php
+END
+sql.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/sql.php
+END
+dumpTextPass.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/dumpTextPass.php
+END
+installExtension.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/installExtension.php
+END
+convertLinks.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/convertLinks.inc
+END
+backupPrefetch.inc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/backupPrefetch.inc
+END
+users.sql
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/users.sql
+END
+parserTestsParserHook.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/parserTestsParserHook.php
+END
+convertLinks.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/convertLinks.php
+END
+tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/tables.sql
+END
+fixSlaveDesync.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/fixSlaveDesync.php
+END

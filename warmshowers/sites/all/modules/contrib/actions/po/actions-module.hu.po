@@ -1,0 +1,163 @@
+# translation of actions-module.po to Hungarian
+# Hungarian translation of Drupal (actions.module)
+# Copyright 2006 Fehér János <feher.janos@mindworks.hu>
+# Generated from file: actions.module,v 1.20 2006/06/13 18:55:16 jvandyk
+#
+# FEHÉR János <feher.janos _at- mindworks.hu>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: actions-module\n"
+"POT-Creation-Date: 2007-02-20 10:52+0100\n"
+"PO-Revision-Date: 2007-02-21 11:45+0100\n"
+"Last-Translator: FEHÉR János <feher.janos _at- mindworks.hu>\n"
+"Language-Team: Hungarian <Drupal.hu Fordítási Csapat <forditas [at] drupal.hu>>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: actions.module:16
+msgid ""
+"This page lists all actions that are available. Simple actions that do not "
+"require any configuration are listed automatically. Actions that need to be "
+"configured are listed in the <em>Add new action</em> menu. To add a "
+"configurable action, select the action and click the <em>Add new action</em> "
+"button. After completing the configuration form, the action will be "
+"available for use by Drupal."
+msgstr ""
+
+#: actions.module:19
+msgid ""
+"This is where you configure a certain action that will be performed at some "
+"time in the future. For example, you might configure an action to send email "
+"to your friend Royce. Your entry in the description field, below, should be "
+"descriptive enough to remind you of that."
+msgstr ""
+
+#: actions.module:37
+msgid "Actions"
+msgstr "Műveletek"
+
+#: actions.module:38
+msgid "Manage the actions defined for your site."
+msgstr "A webhely műveleteinek karbantartása."
+
+#: actions.module:44
+msgid "Configure action"
+msgstr "Művelet beállítása"
+
+#: actions.module:53;62
+msgid "Delete action"
+msgstr "Művelet törlése"
+
+#: actions.module:108
+msgid "Action Type"
+msgstr "Művelet típusa"
+
+#: actions.module:109;200
+msgid "Description"
+msgstr "Leírás"
+
+#: actions.module:110
+msgid "Operations"
+msgstr "Műveletek"
+
+#: actions.module:118
+msgid "configure"
+msgstr "beállítás"
+
+#: actions.module:119
+msgid "delete"
+msgstr "törlés"
+
+#: actions.module:131
+msgid "Actions available to Drupal:"
+msgstr "Elérhető műveletek a Drupalban:"
+
+#: actions.module:141;148
+msgid "Add new action"
+msgstr "Új művelet hozzáadása"
+
+#: actions.module:204
+msgid "A unique description for this configuration of this action"
+msgstr "A művelet beállításához tartozó egyedi leírás"
+
+#: actions.module:224
+msgid "Save"
+msgstr "Mentés"
+
+#: actions.module:244
+msgid "The action has been successfully saved."
+msgstr "A művelet mentése sikerült."
+
+#: actions.module:264
+msgid "Really delete action !action?"
+msgstr "Valóban törölve legyen a művelet: !action ?"
+
+#: actions.module:266
+msgid "This cannot be undone."
+msgstr "A művelet nem visszavonató."
+
+#: actions.module:267
+msgid "Delete"
+msgstr "Törlés"
+
+#: actions.module:268
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: actions.module:278
+msgid "Deleted action %aid (%action)"
+msgstr "Törölt művelet: %aid (%action)"
+
+#: actions.module:279
+msgid "Action !action was deleted"
+msgstr "Művelet törölve: !action"
+
+#: actions.module:314
+msgid "Stack overflow; aborting."
+msgstr "Verem túlcsordulás; a végrehajtás megszakadt."
+
+#: actions.module:521
+msgid "Action '%action' saved."
+msgstr "%action művelet el lett mentve."
+
+#: actions.module:526
+msgid "Action '%action' created."
+msgstr "%action művelet létrejött."
+
+#: actions.module:633
+msgid "Action '%action' added."
+msgstr "%action művelet hozzá lett adva."
+
+#: actions.module:645
+msgid "Deleted orphaned action"
+msgstr "Törölt árva műveletek"
+
+#: actions.module:654
+msgid "Remove orphaned actions"
+msgstr "Árva műveletek törlése"
+
+#: actions.module:656
+msgid "%actionphrase in the actions table: "
+msgstr "%actionphrase a műveletek táblában: "
+
+#: actions.module:278;521;526
+msgid "user"
+msgstr "felhasználó"
+
+#: actions.module:314;0
+msgid "actions"
+msgstr "műveletek"
+
+#: actions.module:656
+msgid "One orphaned action exists"
+msgid_plural "%count orphaned actions exist"
+msgstr[0] "Egy árva művelet létezik"
+msgstr[1] "%count árva művelet létezik"
+
+#: actions.module:76
+msgid "administer actions"
+msgstr "műveletek adminisztrációja"
+

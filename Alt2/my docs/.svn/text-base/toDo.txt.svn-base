@@ -1,0 +1,92 @@
+To Do 
+
+Technologically;
+1.  Download zip database and load all real content (including appropriate redirects) etc.  Write conditional php script that automates this.  
+this way as I make decisions later about how large cities, for example, will be treated.  i can truncate and make the adjustment to the script.
+2.  Get calendar extension or write own calendar functionality so that it can
+	- add events
+	- allow people to join events
+	- allow for reminders via email or what have you aobut those events
+3.  Consider reskinning, but at very least get good icon.
+4.  Fix userlogin to include city/state and check against them being filled out
+5.  Set up the group listing both in terms of what lists to preload, and also handling the ui/ concept of how users will add groups
+and how to maintain this
+6.	Figure out how to layer it such that only users with an account with a credit card can edit the "ad" sections
+7.	Figure out tell em why you're mad section (voting, etc.)
+8.	Figure out photo section and how to manage that.
+9.  Figure out general page logic in terms of summary stuff up front that's either expandable/collapsible or just goes to subpage or both.
+10. Handle different users citizen labeling like founder... and also their inherent permissions.
+11. Captcha or anything else to consider?
+
+
+
+
+Business
+1.	Attract attention anyway possible (espn, ellen, entrepreneur mag)
+2. 	Get bike (hoepfully get sponsored... what's the hook?)
+3.  Figure out how to show live mapping of route
+4.	Figure out where to host
+5.  Business Loan?
+6.  Way down the line but decide on pricing scheme for ads.
+7.	Figure out legalities via kathleen, etc.
+
+
+Experience:
+1. 	Determine route
+2.  Determine sites
+3.  Determine departure date.
+4.  Get balls deep in a good time.
+
+Things thought of later...  Username repeat is okay right?  Hopefully it is because we are storing user data across all cities
+and should allow the same name in different locales.
+\
+
+3-1  ---> 3-3 REVISED TODO!!! **** !!! *** !!! *** !!! *** !!! *** !!! 
+
+STYLE *_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_**_*_*_*_*_
+Wireframe / stylize all pages (check out gimp)
+Logo
+Slogan
+
+Functionality	
+Make database changes to reflect new data management
+CategoryTree extension for category page.
+Script to insert all data from cities
+google maps thing.	
+make everything searchable - but it should be becaus it should all live on pages somewhere
+change search to limit geographic area.
+Rewrite Rules to make everything look friendly (especially if using category pages)
+How to get money
+
+
+3-18  All purpose
+
+1. LLC																[Sent in form] GOT EIN
+3. Mapping of blackberry											[yikes]
+4. Sell Wii															[Start auction so it ends day after party. Sunday]
+9. Process CC transactions  										[paypal] (to start)						
+12. Page Layouts													[getting there]
+13. Choose Hosting   												[amazon ec2/s3]								
+14. Transfer lease	 												[Mike Nads]		not going to happen											
+15. Move out		 												
+16. Get wikiCommunity.com  											[later]
+18. Make meghan that thing											
+22. Figure out shipping for bike.  Call intended carrier and ask.		
+23. Book Flight   [U.S. Continental or Airways?]					[Find out about packing]	AA flights get me in before 2pm , bike is cool
+24. Email Brion														
+26. Get Kegs/Food/more wiffle balls										
+28. Develop news plan								
+25. Call Laurel Beach												DONE				
+31. Call Zanes														DONE [gave me some bullshit about not being able to do refund over phoe]
+27. Get Business Cards												DONE
+6. Get Bike															DONE
+8. Sell Car													FUCKING DONE SON
+5. Sell punching bag  [ALYSSA]										DONE					
+20. Get clothing made												DONE								
+21. Finalize Logo													DONE					
+19. Taxes - CT and refile Fed										DONE
+17. Salvation army clothing.										DONE
+7. Buy Car - April 2nd pay into credit for negative balance.		DONE
+10. Health Insurance												DONE [covered under Fred]
+11. Cancel Etrade													DONE
+2. BlackBerry            											DONE

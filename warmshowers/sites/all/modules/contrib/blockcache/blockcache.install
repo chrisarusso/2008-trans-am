@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @todo uninstall hook
+ */
+
+function blockcache_install(){
+    switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("CREATE TABLE {bc_blocks} (
+        my_delta int(10) NOT NULL,
+        module varchar(40) NOT NULL,
+        mod_delta varchar(40) NOT NULL,
+        PRIMARY KEY  (my_delta)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      db_query("CREATE TABLE {cache_block} (
+        cid varchar(255) NOT NULL default '',
+        data longblob,
+        expire int(11) NOT NULL default '0',
+        created int(11) NOT NULL default '0',
+        headers text,
+        PRIMARY KEY  (cid),
+        KEY expire (expire)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+    }
+  drupal_set_message(t('Database tables for Block Cache module have been installed.'));
+}
+
+function blockcache_update_1(){
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      $ret[] = update_sql("CREATE TABLE {cache_block} (
+        cid varchar(255) NOT NULL default '',
+        data longblob,
+        expire int(11) NOT NULL default '0',
+        created int(11) NOT NULL default '0',
+        headers text,
+        PRIMARY KEY  (cid),
+        KEY expire (expire)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+    }
+  drupal_set_message(t('Cache table for Block Cache module has been installed.'));
+  return $ret;
+}
+
+/*
+CREATE TABLE bc_blocks (
+  my_delta int(10) NOT NULL,
+  module varchar(40) NOT NULL,
+  mod_delta int(10) NOT NULL,
+  PRIMARY KEY  (my_delta)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `cache_block` (
+  `cid` varchar(255) NOT NULL default '',
+  `data` longblob,
+  `expire` int(11) NOT NULL default '0',
+  `created` int(11) NOT NULL default '0',
+  `headers` text,
+  PRIMARY KEY  (`cid`),
+  KEY `expire` (`expire`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+*/
+

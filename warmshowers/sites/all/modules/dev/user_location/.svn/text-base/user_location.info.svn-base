@@ -1,0 +1,6 @@
+; $Id$
+name = user_location
+description = Add location info to a user
+version = "$Revision$"
+dependencies = activeselect ip2cc locationservices
+package = Warmshowers.org

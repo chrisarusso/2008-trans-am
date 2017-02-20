@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.eclipse.php.debug.core.launching.PHPExeLaunchConfigurationType">
+<stringAttribute key="ATTR_LOCATION" value="/Applications/eclipse/plugins/org.zend.php.debug.debugger.macosx_5.2.12.v20071210/resources/php5/php-cgi"/>
+<booleanAttribute key="firstLineBreakpoint" value="true"/>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<booleanAttribute key="org.eclipse.php.debug.core.RunWithDebugInfo" value="true"/>
+<stringAttribute key="org.eclipse.php.debug.coreconfiguration_delegate_class" value="org.eclipse.php.internal.debug.core.launching.PHPExecutableLaunchDelegate"/>
+<stringAttribute key="org.eclipse.php.debug.corephp_debugger_id" value="org.eclipse.php.debug.core.zendDebugger"/>
+</launchConfiguration>

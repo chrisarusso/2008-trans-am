@@ -1,0 +1,10 @@
+; $Id: user_relationships.info,v 1.1 2007/08/15 20:20:01 sprsquish Exp $
+name = User Relationships
+description = "Lets users create named relationships between each other."
+package = "User Relationships"
+
+; Information added by drupal.org packaging script on 2007-10-24
+version = "5.x-1.x-dev"
+project = "user_relationships"
+datestamp = "1193228020"
+

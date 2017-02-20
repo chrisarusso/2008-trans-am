@@ -1,0 +1,99 @@
+<?php
+// $Id: notify.install 446 2007-12-06 14:49:40Z rfay $
+
+/**
+ * Implementation of hook_install()
+ */
+function notify_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      $created = db_query("CREATE TABLE IF NOT EXISTS {notify} (
+        uid INT(10) UNSIGNED NOT NULL DEFAULT '0',
+        status TINYINT(2) NOT NULL DEFAULT '0',
+        node TINYINT(2) NOT NULL DEFAULT '0',
+        comment TINYINT(2) NOT NULL DEFAULT '0',
+        attempts TINYINT(4) NOT NULL DEFAULT '0',
+        teasers TINYINT(4) NOT NULL DEFAULT '0',
+        last_notification int not null default '0',
+        PRIMARY KEY (uid)
+      ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+      
+    case 'pgsql':
+      $created = db_query("CREATE TABLE {notify} (
+        uid integer NOT NULL DEFAULT '0',
+        status integer NOT NULL DEFAULT '0',
+        node integer NOT NULL DEFAULT '0',
+        comment integer NOT NULL DEFAULT '0',
+        attempts integer NOT NULL DEFAULT '0',
+        teasers integer NOT NULL DEFAULT '0',
+        last_notification int not null default '0',
+        PRIMARY KEY (uid)
+      );");
+      break;
+  }
+
+  if ($created) {
+    drupal_set_message(t('Notify module installed successfully.'));
+  }
+  else {
+    drupal_set_message(t('Table installation for the Notify module was unsuccessful. The tables may need to be installed by hand.'), 'error');
+  }
+
+  // Set the module weight so that the cron job will be executed after
+  // scheduler if it is installed.
+  $weight = (int)db_result(db_query("SELECT weight FROM {system} WHERE name = 'scheduler'"));
+  $weight += 10;
+  db_query("UPDATE {system} SET weight = %d WHERE name = 'notify'", $weight);
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+function notify_uninstall() {
+  db_query("DROP TABLE {notify}");
+  variable_del('notify_send');
+  variable_del('notify_attempts');
+  variable_del('notify_send_last');
+}
+
+/**
+ * Alter weight of notify to run after scheduler.
+ */
+function notify_update_1() {
+  $ret = array();
+  $weight = (int)db_result(db_query("SELECT weight FROM {system} WHERE name = 'scheduler'"));
+  $weight += 10;
+  // update_sql() doesn't take other parameters, but this is safe, since $weight
+  // is guaranteed to be an integer.
+  $ret[] = update_sql("UPDATE {system} SET weight = $weight WHERE name = 'notify'");
+  return $ret;
+}
+
+/**
+ * Clear {cache_menu} after the admin menu changes.
+ */
+function notify_update_2() {
+  $ret = array();
+  cache_clear_all(NULL, 'cache_menu');
+  drupal_set_message(t('The settings page for the notify.module is now to be found in Administer > Site configuration > Notification settings.'));
+  return $ret;
+}
+
+
+/**
+ * Add new column last_notification and set it to the value of former variable notify_send_last
+ * 
+ */
+function notify_update_3() {
+  $result[] = update_sql("ALTER TABLE {notify} ADD COLUMN last_notification int  NOT NULL DEFAULT 0");
+  
+  $last_notify_time = (int)variable_get('notify_send_last',time());
+  
+  $result[] = update_sql("update {notify} set last_notification = $last_notify_time");
+  variable_del('notify_send_last');  // Now we'll use the notify_time in table
+  cache_clear_all();
+  drupal_set_message(t('Notify database table updated'));
+  return $result;
+}

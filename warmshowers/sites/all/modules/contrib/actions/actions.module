@@ -1,0 +1,673 @@
+<?php
+/* $Id: actions.module,v 1.25.2.2 2007/03/11 21:17:46 jvandyk Exp $ */
+
+/**
+* @file
+* Enables functions to be stored as scripts to be triggered by other modules.
+*/
+
+/**
+* Implementation of hook_help().
+*/
+function actions_help($section) {
+  $output = '';
+  switch ($section) {
+    case 'admin/build/actions':
+      $output .= t('This page lists all actions that are available. Simple actions that do not require any configuration are listed automatically. Actions that need to be configured are listed in the <em>Add new action</em> menu. To add a configurable action, select the action and click the <em>Add new action</em> button. After completing the configuration form, the action will be available for use by Drupal.');
+      break;
+    case 'admin/build/actions/config':
+      $output .= t('This is where you configure a certain action that will be performed at some time in the future. For example, you might configure an action to send email to your friend Royce. Your entry in the description field, below, should be descriptive enough to remind you of that.');
+      break;
+  }
+
+  return $output;
+
+}
+
+/**
+* Implementation of hook_menu().
+*/
+function actions_menu($may_cache) {
+  $items = array();
+  $access = user_access('administer actions');
+
+  if ($may_cache) {
+    $items[] = array(
+      'path'     => 'admin/build/actions',
+      'title'    => t('Actions'),
+      'description'    => t('Manage the actions defined for your site.'),
+      'access'   => $access,
+      'callback' => 'actions_overview');
+
+    $items[] = array(
+      'path'     => 'admin/build/actions/config',
+      'title'    => t('Configure action'),
+      'access'   => $access,
+      'weight'   => -9,
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('actions_configure'),
+      'type'     => MENU_CALLBACK);
+
+    $items[] = array(
+      'path'     => 'admin/build/actions/delete',
+      'title'    => t('Delete action'),
+      'access'   => $access,
+      'callback' => 'drupal_get_form',
+      'callback arguments' => array('actions_delete_form'),
+      'weight'   => -8,
+      'type'     => MENU_CALLBACK);
+
+    $items[] = array(
+      'path'     => 'admin/build/actions/orphan',
+      'title'    => t('Delete action'),
+      'access'   => $access,
+      'callback' => 'actions_remove_orphans',
+      'weight'   => -8,
+      'type'     => MENU_CALLBACK);
+  }
+
+  return $items;
+}
+
+/**
+* Implementation of hook_perm().
+*/
+function actions_perm() {
+  return array('administer actions');
+}
+
+/**
+ * Menu callback.
+ * Create the main action module page giving an overview of configured actions.
+ *
+ */
+function actions_overview() {
+  $output = '';
+  $actions = actions_list();
+  actions_synchronize($actions);
+  $actions_map = actions_actions_map($actions);
+  $options = array();
+  $unconfigurable = array();
+
+  foreach ($actions_map as $key => $array) {
+    if ($array['configurable']) {
+      $options[$key] = $array['description'] . '...';
+    }
+    else {
+      $unconfigurable[] = $array;
+    }
+  }
+
+  if ($actions_map) {
+    $output .= drupal_get_form('actions_overview_form', $options);
+  }
+
+  $row = array();
+  $instances_present = db_fetch_object(db_query("SELECT aid FROM {actions} WHERE params != ''"));
+  $header = array(
+    array('data' => t('Action Type'), 'field' => 'type'),
+    array('data' => t('Description'), 'field' => 'description'),
+    array('data' => $instances_present ? t('Operations') : '', 'colspan' => '2')
+    );
+  $sql = 'SELECT * FROM {actions}';
+  $result = pager_query($sql . tablesort_sql($header), 50);
+  while ($data = db_fetch_object($result)) {
+    $row[] = array(
+      array('data' => $data->type),
+      array('data' => $data->description),
+      array('data' => $data->params ? l(t('configure'), "admin/build/actions/config/$data->aid") : ''),
+      array('data' => $data->params ? l(t('delete'), "admin/build/actions/delete/$data->aid") : '')
+    );
+    if ($data->params) {
+      $instances_present = TRUE;
+    }
+  }
+
+  if ($row) {
+    $pager = theme('pager', NULL, 50, 0);
+    if (!empty($pager)) {
+      $row[] = array(array('data' => $pager, 'colspan' => '3'));
+    }
+    $output .= '<h3>' . t('Actions available to Drupal:') . '</h3>';
+    $output .= theme('table', $header, $row);
+  }
+
+  return $output;
+}
+
+function actions_overview_form($options = array()) {
+  $form['action'] = array(
+    '#type' => 'select',
+    '#title' => t('Add new action'),
+    '#default_value' => '',
+    '#options' => $options,
+    '#description' => '',
+  );
+  $form['buttons']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add new action'),
+  );
+  return $form;
+}
+
+function actions_overview_form_submit($form_id, $form_values) {
+  if ($form_values['action'] != '') {
+    return 'admin/build/actions/config/' . $form_values['action'];
+  }
+}
+
+/**
+ * Menu callback.
+ * Create the form for configuration of a single action.
+ * We provide the "Description" field. The rest of the form
+ * is provided by the action. We then provide the Save button.
+ */
+function actions_configure($action = NULL) {
+  if ($action === NULL) {
+    drupal_goto('admin/build/actions');
+  }
+
+  $actions_map = actions_actions_map(actions_list());
+  $edit = array();
+
+  if (is_numeric($action)) {
+    // if the form has been filled out, ask the action's function to validate it
+    $dummy = array();
+    $aid = $action;
+    if ($aid) {
+      // load values from database
+      $data = db_fetch_object(db_query("SELECT * FROM {actions} WHERE aid = %d", intval($aid)));
+      $edit['actions_desc'] = $data->description;
+      $edit['actions_type'] = $data->type;
+      $function = $data->func;
+      $action = md5($data->func);
+      $params = unserialize($data->params);
+      if ($params) {
+        foreach ($params as $name => $val) {
+          $edit[$name] = $val;
+        }
+      }
+    }
+  }
+  else {
+    $function = $actions_map[$action]['function'];
+    $edit['actions_desc'] = $actions_map[$action]['description'];
+  }
+
+  $form = array();
+  $form['actions_desc'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Description'),
+    '#default_value' => $edit['actions_desc'],
+    '#size' => '70',
+    '#maxlength' => '255',
+    '#description' => t('A unique description for this configuration of this action'),
+    '#weight' => -10
+  );
+  $form = array_merge($form, $function('form', $edit, $dummy));
+  $form['action'] = array(
+    '#type' => 'hidden',
+    '#value' => $action,
+  );
+  if ($aid) {
+    $form['aid'] = array(
+      '#type' => 'hidden',
+      '#value' => $aid,
+    );
+  }
+  $form['configured'] = array(
+    '#type' => 'hidden',
+    '#value' => '1',
+  );
+  $form['buttons']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+    '#weight' => 13
+  );
+
+  return $form;
+}
+
+function actions_configure_validate($form_id, $form_values) {
+  $function = actions_key_lookup($form_values['action']);
+  $dummy = array();
+  $function('validate', $form_values, $dummy);
+}
+
+function actions_configure_submit($form_id, $form_values) {
+  $function = actions_key_lookup($form_values['action']);
+  $dummy = array();
+  $params = $function('submit', $form_values, $dummy);
+  $metadata = $function('metadata', $form_values, $dummy);
+  $aid = $form_values['aid'];
+  actions_save($function, $metadata['type'], $params, $form_values['actions_desc'], $aid);
+  drupal_set_message(t('The action has been successfully saved.'));
+
+  return 'admin/build/actions';
+}
+
+/**
+ * Menu callback.
+ * Create the form for confirmation of deleting an action.
+ *
+ */
+function actions_delete_form($aid) {
+  if (!$aid) drupal_goto('admin/build/actions');
+  $action = actions_load($aid);
+  $form['aid'] = array(
+    '#type' => 'hidden',
+    '#value' => $aid
+  );
+
+  return confirm_form(
+    $form,
+    t('Really delete action !action?', array('!action' => theme('placeholder', $action->description))),
+    'admin/build/actions',
+    t('This cannot be undone.'),
+    t('Delete'),
+    t('Cancel')
+  );
+}
+
+function actions_delete_form_submit($form_id, $form_values) {
+  // note that in the future we need to check for dependencies here
+  $aid = $form_values['aid'];
+  $action = actions_load($aid);
+  actions_delete($aid);
+  $description = check_plain($action->description);
+  watchdog('user', t('Deleted action %aid (%action)', array('%aid' => $aid, '%action' => $description)));
+  drupal_set_message(t('Action !action was deleted', array('!action' => theme('placeholder', $description))));
+  return 'admin/build/actions';
+}
+
+/**
+ * Given the IDs of actions to perform, find out what the functions
+ * for the actions are by querying the database. Then call each function
+ * using the function call $function('do', $params, $a1, $a2, $a3, $a4)
+ * where $function is the name of a function written in compliance with
+ * the action specification. The $params parameter is an array of
+ * stored parameters that have been previously configured through the
+ * web using actions.module.
+ *
+ * @param $aids
+ *   The ID of the action to perform. Can be a single action ID or an array
+ *   of IDs. IDs of instances will be numeric; IDs of singletons will be
+ *   function names.
+ * @param $a1
+ *   Parameter that will be passed along to the callback.
+ * @param $a2
+ *   Parameter that will be passed along to the callback.
+ * @param $a3
+ *   Parameter that will be passed along to the callback.
+ * @param $a4
+ *   Parameter that will be passed along to the callback.
+ *
+ * @return
+ *   An associative array containing the result of the function that
+ *   performs the action, keyed on action ID.
+ *
+ */
+function actions_do($aids, $a1 = NULL, $a2 = NULL, $a3 = NULL, $a4 = NULL) {
+  static $stack;
+  $stack++;
+  if ($stack > 25) {
+    watchdog('actions', t('Stack overflow; aborting.'), WATCHDOG_ERROR);
+    return;
+  }
+  $actions = array();
+  $available_actions = actions_list();
+  $result = array();
+  if (is_array($aids)) {
+    $where = '';
+    foreach ($aids as $aid) {
+      if (is_numeric($aid)) {
+        $where .= 'OR aid = ' . $aid . ' ';
+      }
+      elseif (isset($available_actions[$aid])) {
+        $actions[$aid] = $available_actions[$aid];
+      }
+    }
+
+    if ($where) { // we must go to the database to retrieve instance data
+      // strip off leading 'OR '
+      $where = $where ? '(' . strstr($where, " ") . ')' : '';
+      $result_db = db_query("SELECT * FROM {actions} WHERE $where");
+      while ($data = db_fetch_object($result_db)) {
+        $aid = $data->aid;
+        $actions[$aid] = $data->params ? unserialize($data->params) : array();
+        $actions[$aid]['function']  = $data->func;
+        $actions[$aid]['type']      = $data->type;
+        $actions[$aid]['batchable'] = $available_actions[$data->func]['batchable'];
+      }
+    }
+
+    // batch node functions to avoid unnecessary and costly node_load
+    // and node_save for each action; only the last one will do node_save
+    $batch = array();
+    foreach ($actions as $func => $metadata) {
+      if ($metadata['batchable']) {
+        $batch[$metadata['type']][] = $func;
+      }
+    }
+
+    // fire batched actions
+    // each type has its own batch
+    foreach ($batch as $type) {
+      // remove last batchable action so it will not receive 'defer'
+      array_pop($type);
+      foreach ($type as $action) {
+        if (is_numeric($action)) { // it needs parameters
+          $actions[$action]['defer'] = TRUE;
+          $result[$action] = $actions[$action]['function']('do', $actions[$action], $a1, $a2, $a3, $a4);
+        }
+        else { // singleton
+          $result[$action] = $action('do', array('defer' => TRUE), $a1, $a2, $a3, $a4);
+        }
+        // remove action we've already fired
+        unset($actions[$action]);
+      }
+    }
+
+    // fire remaining actions in no particular order
+    foreach ($actions as $aid => $params) {
+      if (is_numeric($aid)) { // it needs parameters
+        $function = $params['function'];
+        $result[$aid] = $function('do', $params, $a1, $a2, $a3, $a4);
+      }
+      else {
+        $result[$aid] = $aid('do', array(), $a1, $a2, $a3, $a4);
+      }
+    }
+  }
+  else { // optimized for single action
+    if (is_numeric($aids)) {
+      $data = db_fetch_object(db_query("SELECT * FROM {actions} WHERE aid = %d", $aids));
+      $function = $data->func;
+      $result[$aids] = $function('do', unserialize($data->params), $a1, $a2, $a3, $a4);
+    }
+    else { // $aids is an actual function name
+      $result[$aids] = $aids('do', array(), $a1, $a2, $a4, $a4);
+    }
+  }
+  return $result;
+}
+
+/**
+ * Discover all action functions. These begin with 'action_'.
+ * An action function must be of the form
+ * 'action_' . module name . function name($op ...)
+ *
+ * action_example_foo($op, $context, $node) {
+ *   switch($op) {
+ *     case 'metadata':
+ *       return array(
+ *         'type'         = t('Node'),
+ *         'description'  = t('Translate a node to French'),
+ *         'configurable' = false,
+ *         'batchable'    = false)
+ *     case 'do':
+ *       $node->body = lang_translate($node->body, 'FR');
+ *       node_save($node);
+ *   }
+ * }
+ *
+ * The description is used in presenting possible actions to the user for
+ * configuration. The type is used to present these actions in a logical
+ * grouping.
+ *
+ *
+ * @return
+ *   An associative array keyed on function name. The value of each key is
+ *   an array containing information about the action, such as type of
+ *   action and description of the action.
+ *   E.g. $actions['actions_node_publish'] = ('description' => 'Publish a node' ... )
+ *
+*/
+function actions_list() {
+  static $actions;
+  if (isset($actions)) {
+    return $actions;
+  }
+
+  $actions = array();
+
+  $all_func = get_defined_functions();
+  $functions = array_filter($all_func['user'], '_actions_isaction');
+  $dummy = array();
+  foreach ($functions as $function) {
+    $actions[$function] = $function('metadata', $dummy, $dummy);
+  }
+  return $actions;
+}
+
+/**
+ * Create an associative array keyed by md5 hashes of function names.
+ * Hashes are used to prevent actual function names from going out into
+ * HTML forms and coming back.
+ *
+ * @param $actions
+ *   An associative array with function names as keys and associative
+ *   arrays with keys 'description', 'type', etc. as values. Generally
+ *   the output of actions_list() or actions_get_all_actions is given
+ *   as input to this function.
+ *
+ * @return
+ *   An associative array keyed on md5 hash of function name. The value of
+ *   each key is an associative array of function, description, and type
+ *   for the action.
+ */
+function actions_actions_map($actions) {
+  $actions_map = array();
+  foreach ($actions as $func => $array) {
+    $key = md5($func);
+    $actions_map[$key]['function']     = $func;
+    $actions_map[$key]['description']  = $array['description'];
+    $actions_map[$key]['type']         = $array['type'];
+    $actions_map[$key]['configurable'] = $array['configurable'];
+    $actions_map[$key]['batchable']    = $array['batchable'];
+  }
+  return $actions_map;
+}
+
+/**
+ * Given an md5 hash of a function name, return the function name.
+ * Faster than actions_actions_map() when you only need the function name.
+ *
+ * @param $hash
+ *   MD5 hash of a function name
+ *
+ * @return
+ *   Function name
+ *
+ */
+function actions_key_lookup($hash) {
+  foreach (actions_list() as $func => $array) {
+    if (md5($func) == $hash) {
+      return $func;
+    }
+  }
+
+  // must be an instance; must check database
+  $result = db_query("SELECT aid FROM {actions} WHERE params != ''");
+  while ($data = db_fetch_object($result)) {
+    if (md5($data->aid) == $hash) {
+      return $data->aid;
+    }
+  }
+}
+
+/**
+ * Save an action and its associated user-supplied parameter values to
+ * the database.
+ *
+ * @param $function
+ *   The name of the function to be called when this action is performed.
+ * @param $params
+ *   An associative array with parameter names as keys and parameter values
+ *   as values.
+ * @param $desc
+ *   A user-supplied description of this particular action, e.g. 'Send
+ *   e-mail to Jim'
+ * @param $aid
+ *   The ID of this action. If omitted, a new action is created.
+ *
+ * @return
+ *   The ID of the action.
+ */
+function actions_save($function, $type, $params, $desc, $aid = NULL) {
+  $serialized = serialize($params);
+  if ($aid) {
+    db_query("UPDATE {actions} SET func = '%s', type = '%s', params = '%s', description = '%s' WHERE aid = %d", $function, $type, $serialized, $desc, $aid);
+    watchdog('user', t("Action '%action' saved.", array('%action' => check_plain($desc))));
+  }
+  else {
+    $aid = db_next_id('{actions}_aid');
+    db_query("INSERT INTO {actions} (aid, func, type, params, description) VALUES (%d, '%s', '%s', '%s', '%s')", $aid, $function, $type, $serialized, $desc);
+    watchdog('user', t("Action '%action' created.", array('%action' => check_plain($desc))));
+  }
+
+  return $aid;
+}
+
+/**
+ * Retrieve a single action from the database.
+ *
+ * @param $aid
+ *   integer The ID of the action to retrieve.
+ *
+ * @return
+ *   The appropriate action row from the database as an object.
+ */
+function actions_load($aid) {
+  return db_fetch_object(db_query("SELECT * FROM {actions} WHERE aid = %d", $aid));
+}
+
+/**
+ * Delete a single action from the database.
+ *
+ * @param $aid
+ *   integer The ID of the action to retrieve.
+ *
+ */
+function actions_delete($aid) {
+  db_query("DELETE FROM {actions} WHERE aid = %d", $aid);
+}
+
+/**
+ * Retrieve all action instances from the database.
+ * Compare with actions_list() which gathers actions from
+ * the PHP function namespace. The two are synchronized
+ * by visiting /admin/build/actions, which runs actions_synchronize().
+ *
+ * @return
+ *   Associative array keyed by action ID. Each value is
+ *   an associative array with keys 'function', 'description',
+ *   and 'type'.
+ */
+function actions_get_all_actions() {
+  $actions = array();
+  $result = db_query("SELECT * FROM {actions}");
+  while ($data = db_fetch_object($result)) {
+    $actions[$data->aid] = array('function' => $data->func, 'description' => $data->description, 'type' => $data->type);
+  }
+  return $actions;
+}
+
+/**
+ * Register an action in the actions registry. This function is called
+ * by modules that are using the actions. The actions registry
+ * keeps track of in which modules actions are used. This allows us
+ * to warn the administrator when an action is about to be deleted by
+ * pointing out the action is still being used by such and such a module.
+ *
+ */
+function actions_register($aid, $module_name, $id) {
+  if (db_fetch_object(db_query("SELECT aid FROM {actions_registry} WHERE aid = %d AND module = '%s' AND id = %d", $aid, $module_name, $id))) return;
+  db_query("INSERT INTO {actions_registry} (aid, module, id) VALUES (%d, '%s', %d)", $aid, $module_name, $id);
+}
+
+/**
+ * Remove an action from the actions registry. This must be
+ * done by all modules that are using an action before an action
+ * is deleted. For example, if workflow.module is using action 14
+ * in a transition, workflow.module is responsible for calling
+ * actions_unregister when the transition is deleted.
+ *
+ * @return
+ *   Associative array keyed by action ID. Each value is
+ *   an associative array with keys 'function' and 'description'.
+ */
+function actions_unregister($aid, $module_name, $id) {
+  db_query("DELETE FROM {actions_registry} WHERE aid = %d AND module = '%s' AND id = %d", $aid, $module_name, $id);
+}
+
+/**
+ * Synchronize actions that are provided by modules with actions
+ * that are stored in the actions table. This is necessary so that
+ * actions that do not require configuration can receive action IDs.
+ * This is not necessarily the best approach, but it is the most
+ * straightforward.
+ *
+ */
+function actions_synchronize($actions_in_code = array(), $delete_orphans = FALSE) {
+  if (!$actions_in_code) {
+    $actions_in_code = actions_list();
+  }
+  $actions_in_db = array();
+  $result = db_query("SELECT * FROM {actions} WHERE params = ''");
+  while ($data = db_fetch_object($result)) {
+    $actions_in_db[$data->func] = array('aid' => $data->aid, 'description' => $data->description);
+  }
+
+  // go through all the actions provided by modules
+  foreach ($actions_in_code as $func => $array) {
+    // ignore configurable actions since their instances get put in when user adds action
+    if (!$array['configurable']) {
+      // if we already have an action ID for this action
+      if (array_key_exists($func, $actions_in_db)) {
+        unset($actions_in_db[$func]);
+      }
+      else {
+        // this is a new singleton that we don't have an aid for; assign one
+        db_query("INSERT INTO {actions} (aid, type, func, params, description) VALUES ('%s', '%s', '%s', '%s', '%s')", $func, $array['type'], $func, '', $array['description']);
+        drupal_set_message(t("Action '%action' added.", array('%action' => htmlspecialchars($array['description']))));
+      }
+    }
+  }
+
+  // any actions that we have left in $actions_in_db are orphaned
+  if ($actions_in_db) {
+    $orphaned = '';
+
+    foreach ($actions_in_db as $func => $array) {
+      if ($delete_orphans) {
+        db_query("DELETE FROM {actions} WHERE func = '%s'", $func);
+        drupal_set_message(t('Deleted orphaned action') . " '$func'.");
+      }
+      else {
+        $orphaned .= $func . ', ';
+      }
+    }
+
+    if (!$delete_orphans) {
+      $orphaned = rtrim(rtrim($orphaned, ' '), ',');
+      $link = l(t('Remove orphaned actions'), 'admin/build/actions/orphan');
+
+      drupal_set_message(t("%actionphrase in the actions table: ", array('%actionphrase' => format_plural(count($actions_in_db), 'One orphaned action exists', '%count orphaned actions exist'))) . ' (' . $orphaned . '). ' . $link, 'warning');
+    }
+  }
+}
+
+function actions_remove_orphans() {
+  actions_synchronize(actions_list(), TRUE);
+  drupal_goto('admin/build/actions');
+}
+
+/**
+ * Callback function for array_filter in actions_list()
+ */
+function _actions_isaction($s) {
+  return substr($s, 0, 7) == 'action_';
+}
+
+include_once(drupal_get_path('module', 'actions') . '/actions.inc');

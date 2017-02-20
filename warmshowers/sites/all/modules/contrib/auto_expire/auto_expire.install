@@ -1,0 +1,77 @@
+<?php
+// $Id: auto_expire.install 371 2007-10-18 15:47:58Z rfay $
+
+require 'auto_expire.inc';
+
+// hook_install
+function auto_expire_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      $result = db_query("CREATE TABLE {auto_expire} (
+        nid int(10) unsigned NOT NULL,
+        warned int(1) unsigned NOT NULL DEFAULT 0,
+        expire int(11) NOT NULL,
+        extended int(3) unsigned NOT NULL DEFAULT 0,
+        primary key (nid)
+        );
+      ");
+        
+      if ($result)
+        drupal_set_message('Auto Expire module mysql table {auto_expire} created successfully.');
+      else
+        drupal_set_message('Auto Expire module mysql table {auto_expire} creation failed!', 'error');
+        
+      break;
+    
+    case 'pgsql':
+      drupal_set_message('PostgresSQL not supported', 'error');
+      break;
+  }
+}
+
+// hook_update_N
+function auto_expire_update_1() {
+  foreach(node_get_types() as $type => $name) {
+    $code_old = 'auto_expire_node_type_' . $type;
+    $code_new = AUTO_EXPIRE_NODE_TYPE . $type;
+    
+    $expire = variable_get($code_old . '_expire', 0);
+    $days   = variable_get($code_old . '_days', AUTO_EXPIRE_DAYS);
+    $warn   = variable_get($code_old . '_warn', AUTO_EXPIRE_WARN);
+    $purge  = variable_get($code_old . '_purge', AUTO_EXPIRE_PURGE);
+    
+    variable_set($code_new . '_e', $expire);
+    variable_set($code_new . '_d', $days);
+    variable_set($code_new . '_w', $warn);
+    variable_set($code_new . '_p', $purge);
+    
+    variable_del($code_old . '_expire');
+    variable_del($code_old . '_days');
+    variable_del($code_old . '_warn');
+    variable_del($code_old . '_purge');
+  }
+  
+  return array();
+}
+
+// hook_uninstall
+function auto_expire_uninstall() {
+  db_query('DROP TABLE {auto_expire}');
+
+  foreach(node_get_types() as $type => $name) {
+    $code = AUTO_EXPIRE_NODE_TYPE . $type;
+    
+    variable_del($code . '_e');
+    variable_del($code . '_d');
+    variable_del($code . '_w');
+    variable_del($code . '_p');
+  }
+  
+  variable_del(AUTO_EXPIRE_EMAIL . 'warn_subject');
+  variable_del(AUTO_EXPIRE_EMAIL . 'warn_body');
+  variable_del(AUTO_EXPIRE_EMAIL . 'expired_subject');
+  variable_del(AUTO_EXPIRE_EMAIL . 'expired_body');
+}
+
+?>

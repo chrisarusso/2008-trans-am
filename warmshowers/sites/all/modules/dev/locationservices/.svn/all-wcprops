@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/warmshowers/!svn/ver/500/website/trunk/sites/all/modules/dev/locationservices
+END
+locationservices.module
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/warmshowers/!svn/ver/430/website/trunk/sites/all/modules/dev/locationservices/locationservices.module
+END
+locationservices.install
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/warmshowers/!svn/ver/408/website/trunk/sites/all/modules/dev/locationservices/locationservices.install
+END
+locationservices.info
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/warmshowers/!svn/ver/382/website/trunk/sites/all/modules/dev/locationservices/locationservices.info
+END

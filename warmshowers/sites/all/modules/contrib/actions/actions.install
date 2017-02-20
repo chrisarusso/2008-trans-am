@@ -1,0 +1,99 @@
+<?php
+// $Id: actions.install,v 1.4.2.1 2007/05/02 15:19:39 jvandyk Exp $
+
+function actions_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      $query1 = db_query(
+<<<QUERY
+CREATE TABLE {actions} (
+  aid varchar(255) NOT NULL default '0',
+  type varchar(255) NOT NULL default '',
+  func varchar(255) NOT NULL default '',
+  params longtext NOT NULL,
+  description varchar(255) NOT NULL default '',
+  PRIMARY KEY  (aid),
+  KEY func (func)
+) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;
+QUERY
+      );
+      
+      $query2 = db_query(
+<<<QUERY
+CREATE TABLE {actions_registry} (
+  aid int(10) unsigned NOT NULL default '0',
+  module varchar(255) NOT NULL default '',
+  id int(10) unsigned NOT NULL default '0',
+  KEY module (module),
+  KEY id (id),
+  KEY aid (aid)
+) TYPE=MyISAM /*!40100 DEFAULT CHARACTER SET utf8 */;
+QUERY
+      );
+
+            
+      if ($query1 && $query2) {
+        drupal_set_message(t('The actions module has successfully added tables to the MySQL database.'));
+      }
+      else {
+        drupal_set_message(t('Drupal was unable to install the database tables for the actions module.'));
+      }
+      break;
+      
+    case 'pgsql':
+      $query1 = db_query("CREATE TABLE {actions} (
+        aid varchar(255) NOT NULL default '0',
+        type varchar(255) NOT NULL default '',
+        func varchar(255) NOT NULL default '',
+        params text NOT NULL,
+        description varchar(255) NOT NULL default '',
+        PRIMARY KEY  (aid)
+      )");
+      
+      $query2 = db_query("CREATE INDEX {actions}_func_idx ON {actions} USING HASH (func)");
+
+      $query3 = db_query("CREATE TABLE {actions_registry} (
+        aid integer NOT NULL default '0' CHECK (aid >= 0),
+        module varchar(255) NOT NULL default '',
+        id integer NOT NULL default '0' CHECK (id >= 0)
+      )");
+
+      $query4 = db_query("CREATE INDEX {actions_registry}_module_idx ON {actions_registry} USING HASH (module)");
+      $query5 = db_query("CREATE INDEX {actions_registry}_id_idx ON {actions_registry} USING HASH (id)");
+      $query6 = db_query("CREATE INDEX {actions_registry}_aid_idx ON {actions_registry} USING HASH (aid)");
+      if ($query1 && $query2 && $query3 && $query4 && $query5 && $query6) {
+        drupal_set_message(t('The actions module has successfully added tables to the PostgreSQL database.'));
+      }
+      else {
+        drupal_set_message(t('Drupal was unable to install the database tables for the actions module.'));
+      }
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function actions_uninstall() {
+  db_query('DROP TABLE {actions}');
+  db_query('DROP TABLE {actions_registry}');
+}
+
+function actions_update_1() {
+   return _system_update_utf8(array('actions', 'actions_registry'));
+}
+
+// Update sequence names to be cross-database compatible.
+function actions_update_2() {
+  $ret = array();
+  switch ($GLOBALS['db_type']) {
+    case 'mysqli':
+    case 'mysql':
+      db_query('LOCK TABLES {sequences} WRITE');
+      $ret[] = update_sql("UPDATE {sequences} SET name = '". db_prefix_tables('{actions}_aid') ."' WHERE name = 'actions'");
+      db_query('UNLOCK TABLES');
+      break;
+  }
+  return $ret;
+}

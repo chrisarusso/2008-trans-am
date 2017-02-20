@@ -1,0 +1,52 @@
+8
+
+dir
+31
+http://svn.wikicommunity.org/svn/wc/tags/wc-0.1.1/skins/disabled
+http://svn.wikicommunity.org/svn/wc
+
+
+
+2008-05-02T00:19:03.091522Z
+2
+crusso
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+084f2c3f-334c-0410-b887-be28c7a04714
+
+MonoBook.tpl
+file
+
+
+
+
+2008-05-02T04:06:18.000000Z
+b17c079928b7d0cad64980f0c7ec61e9
+2008-05-02T00:19:03.091522Z
+2
+crusso
+
+MonoBookCBT.php
+file
+
+
+
+
+2008-05-02T04:06:18.000000Z
+3249ddaaad8f4acbfe2a57a11fc1b123
+2008-05-02T00:19:03.091522Z
+2
+crusso
+

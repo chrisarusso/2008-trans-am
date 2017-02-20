@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/warmshowers/!svn/ver/500/website/trunk/sites/all/modules/dev/locationservices/geonames
+END
+user_location_countries.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/warmshowers/!svn/ver/500/website/trunk/sites/all/modules/dev/locationservices/geonames/user_location_countries.txt
+END
+notes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/warmshowers/!svn/ver/337/website/trunk/sites/all/modules/dev/locationservices/geonames/notes.txt
+END
+geonames.pl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/warmshowers/!svn/ver/500/website/trunk/sites/all/modules/dev/locationservices/geonames/geonames.pl
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/warmshowers/!svn/ver/493/website/trunk/sites/all/modules/dev/locationservices/geonames/README.txt
+END
+user_location_provinces.sql
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/warmshowers/!svn/ver/500/website/trunk/sites/all/modules/dev/locationservices/geonames/user_location_provinces.sql
+END

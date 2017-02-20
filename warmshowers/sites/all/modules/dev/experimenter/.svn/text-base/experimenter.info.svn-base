@@ -1,0 +1,5 @@
+; $Id$
+name = experimenter
+description = "expermentation module"
+version = "$Revision$"
+package = Warmshowers.org

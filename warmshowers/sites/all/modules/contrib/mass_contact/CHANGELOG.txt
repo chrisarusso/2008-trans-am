@@ -1,0 +1,33 @@
+$Id: CHANGELOG.txt,v 1.1.2.1 2007/09/12 15:36:34 oadaeh Exp $
+
+2007-09-12 Jason Flatt drupal@oadaeh.net
+  * Fixed the fact that multiple categories were not being mailed to (which is
+    what delayed the previous changes from getting into CVS).
+  * Fixed two places (in the area where there is a limit on the number of
+    recipients) where I was not checking for a valid header before sending the
+    e-mail. Thanks to sharplesa for alerting me to this oversight:
+    http://drupal.org/node/173987
+  * Added a TODO.txt file for notes and reminders on things to do.
+  * Removed translation functions in areas that didn't work, as reported by
+    skizzo in this comment: http://drupal.org/node/145940#comment-284484
+
+2007-09-01 Jason Flatt drupal@oadaeh.net
+  * Added this file.
+  * The community has spoken: reverting all constants to upper case.
+  * Removed an uncessary validation check in mass_contact_admin_edit_validate.
+  * Added periods at the end of a few sentences.
+  * Moved code to inform user about node creation inside the check to do it in
+    the first place.
+  * Changed the way creating categories works so that multiple categories can
+    be selected by default, and the mail page will respect those choices.
+  * Added the two feature requests listed here: http://drupal.org/node/170837,
+    namely, hiding the categories checkbox, if there is only one category, and
+    it is set as selected, and showing descriptive text instead of the BCC
+    checkbox, if users are not allowed to change the setting.
+  * Rearranged the admin settings and the mail page, so that they flowed more
+    like a standard e-mail sending form.
+  * Tweaked a few things here and there (text, punctuation, etc.).
+  * Added more commenting to the code. There's still more to do.
+  * Probably some other stuff I forgot about.  :^)  (This was supposed to be a
+    quick change to a couple of things that ended up being a much bigger
+    update that took a lot longer.)

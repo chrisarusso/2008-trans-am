@@ -1,0 +1,415 @@
+<?php
+// $Id: auto_expire.module 371 2007-10-18 15:47:58Z rfay $
+
+require_once 'auto_expire.inc';
+
+// hook_perm
+function auto_expire_perm() {
+  return array(ADMINISTER_AUTO_EXPIRE, EXTEND_AUTO_EXPIRE_OWN, EXTEND_AUTO_EXPIRE_ALL);
+}
+
+// hook_help
+function auto_expire_help($section) {
+  switch($section)     {
+    case 'admin/help#auto_expire':
+    case 'admin/modules#description':
+      return t('Expires nodes automatically.');
+      break;
+    }
+}
+
+// hook_menu
+function auto_expire_menu($may_cache) {
+  $items = array();
+    
+  if ($may_cache) {
+  }
+  else {
+    $items[] = array(
+      'path' => 'admin/settings/auto_expire',
+      'title' => t('Auto Expire'),
+      'description' => t('Set node types that auto expire.'),
+      'callback' => 'drupal_get_form',
+      'callback arguments' => '_auto_expire_admin_settings',
+      'access' => user_access(ADMINISTER_AUTO_EXPIRE),
+      'type' => MENU_NORMAL_ITEM,
+    );
+        
+    if (arg(0) == 'node' && is_numeric(arg(1))) {
+      $node = node_load(arg(1));
+        
+      if (_auto_expire_is_expiring_node($node)) {
+        $items[] = array(
+          'path' => 'node/' . $node->nid . '/expiry',
+          'title' => t('Expiry'),
+          'description' => t('See and extend the expiry period.'),
+          'callback' => 'drupal_get_form',
+          'callback arguments' => array('_auto_expire_expiry', $node->nid),
+          'access' => _auto_expire_can_user_extend($node),
+          'type' => MENU_LOCAL_TASK,
+          'weight' => 10,
+        );
+      }
+    }
+  }
+    
+  return $items;
+}
+
+function _auto_expire_is_expiring_node($node) {
+  return variable_get(AUTO_EXPIRE_NODE_TYPE . $node->type . '_e', 0);
+}
+
+function _auto_expire_can_user_extend($node) {
+  global $user;
+  
+  return user_access(EXTEND_AUTO_EXPIRE_ALL) || (user_access(EXTEND_AUTO_EXPIRE_OWN) && $user->uid > 0 && $node->uid == $user->uid);
+}
+
+function _auto_expire_expiry($nid) {
+  $node = node_load($nid);
+  
+  drupal_set_title(check_plain($node->title));
+  
+  $expire = _auto_expire_get_expire($node->nid);
+  $code = AUTO_EXPIRE_NODE_TYPE . $node->type;
+  $warn = variable_get($code . '_w', AUTO_EXPIRE_WARN);
+  
+  $form['nid'] = array(
+    '#type' => 'value',
+    '#value' => $nid
+  );
+  
+  $form['expireson'] = array(
+    '#value' => '<p>' .
+                t('!title will expire on !date<br />that is in !interval.', array(
+                  '!title' => $node->title,
+                  '!date' => format_date($expire),
+                  '!interval' => format_interval($expire - time()))
+                ) .
+                '</p>',
+  );
+  
+  if (time() > $expire - ($warn * 24 * 60 * 60)) {
+    $days = variable_get($code . '_d', AUTO_EXPIRE_DAYS);
+    $form['extendby'] = array(
+      '#value' => '<p>' .
+                  format_plural($days, 'You can extend it with 1 day.', 'You can extend it with @count days.') .
+                  '</p>',
+    );
+    
+    $form['extend'] = array(
+      '#type' => 'submit',
+      '#value' => t('Extend'),
+    );
+  } else {
+    $form['extendwhen'] = array(
+      '#value' => '<p>' .
+                  format_plural($warn, 'You will be able to extend this 24 hours before the expiry time.', 'You will be able to extend this @count days before the expiry time.') .
+                  ' ' .
+                  t('You will receive an email notification at that time.') .
+                  '</p>',
+    );
+  }
+  
+  return $form;
+}
+
+function _auto_expire_expiry_submit($form_id, $form_values) {
+  $op = $form_values['op'];
+  $node = node_load($form_values['nid']);
+
+  switch($op) {
+    case t('Extend'):
+      $days = variable_get(AUTO_EXPIRE_NODE_TYPE . $node->type . '_d', AUTO_EXPIRE_DAYS);
+      db_query('UPDATE {auto_expire} SET expire = expire + %d, extended = extended + 1, warned = 0 WHERE nid = %d', $days * 24 * 60 * 60, $node->nid);
+        
+      watchdog('auto_expire', "Extended node $node->nid by $days days", WATCHDOG_NOTICE);
+      drupal_set_message(t('Extended for !days more days', array('!days' => $days)));
+        
+      break;
+  }
+    
+  return "node/$node->nid/expiry";
+}
+
+function _auto_expire_admin_settings() {
+  $form = array();
+  
+  foreach(node_get_types() as $type => $name) {
+    $code = AUTO_EXPIRE_NODE_TYPE . $type;
+    
+    $form['nodetypes'][$type] = array(
+      '#type' => 'fieldset',
+      '#title' => $name->name,
+      '#collapsible' => TRUE,
+      '#collapsed' => ! variable_get($code . '_e', 0),
+    );
+    
+    $form['nodetypes'][$type][$code . '_e'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Expire'),
+      '#return_value' => 1,
+      '#default_value' => variable_get($code . '_e', 0),
+    );
+    
+    $form['nodetypes'][$type][$code . '_d'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Days'),
+      '#field_suffix' => t('days'),
+      '#return_value' => 1,
+      '#default_value' => variable_get($code . '_d', AUTO_EXPIRE_DAYS),
+      '#description' => t('Number of days after an item was created when it will be automatically expired.'),
+    );
+    
+    $form['nodetypes'][$type][$code . '_w'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Warn'),
+      '#field_suffix' => t('days'),
+      '#return_value' => 1,
+      '#default_value' => variable_get($code . '_w', AUTO_EXPIRE_WARN),
+      '#description' => t('Number of days before the items expiration when a warning message is sent to the user. Set to 0 (zero) for no warnings.'),
+    );
+    
+    $form['nodetypes'][$type][$code . '_p'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Purge'),
+      '#field_suffix' => t('days'),
+      '#return_value' => 1,
+      '#default_value' => variable_get($code . '_p', AUTO_EXPIRE_PURGE),
+      '#description' => t('Number of days after an item has expired when it will be purged from the database. Set to 0 (zero) for no purge.'),
+    );
+  }
+  
+  $form['email']['warn'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Expiration Warning Notification Email'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#description' => t("Template of email sent when content is about to expire. You can use the following variables:!type - content type, !title - title of content, !url - URL of content, !days - number of days before it expired, !site - site name, !siteurl - site URL"),
+  );
+  
+  $form['email']['warn'][AUTO_EXPIRE_EMAIL . 'warn_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email Subject'),
+    '#description' => t('Leave empty to disable Expiration Warning Notifications.'),
+    '#return_value' => 1,
+    '#default_value' => variable_get(AUTO_EXPIRE_EMAIL . 'warn_subject', t('!type about to expire')),
+  );
+  
+  $form['email']['warn'][AUTO_EXPIRE_EMAIL . 'warn_body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Email Body'),
+    '#return_value' => 1,
+    '#default_value' => variable_get(AUTO_EXPIRE_EMAIL . 'warn_body', t("Your !type listing '!title' will expire in !days days.\n\nPlease visit !site if you want to renew:\n!url")),
+  );
+  
+  $form['email']['expired'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Expired Notification Email'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#description' => t("Template of email sent right after the content has expired. You can use the following variables:!type - content type, !title - title of content, !site - site name, !siteurl - site URL"),
+  );
+    
+  $form['email']['expired'][AUTO_EXPIRE_EMAIL . 'expired_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Email Subject'),
+    '#description' => t('Leave empty to disable Expired Notifications.'),
+    '#return_value' => 1,
+    '#default_value' => variable_get(AUTO_EXPIRE_EMAIL . 'expired_subject', t('!type has expired')),
+  );
+  
+  $form['email']['expired'][AUTO_EXPIRE_EMAIL . 'expired_body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Email Body'),
+    '#return_value' => 1,
+    '#default_value' => variable_get(AUTO_EXPIRE_EMAIL . 'expired_body', t("Your !type listing '!title' has expired.\n\nPlease visit !site to add new content:\n!siteurl")),
+  );
+
+  return system_settings_form($form);
+}
+
+// hook_cron
+function auto_expire_cron() {
+  foreach(node_get_types() as $type => $name) {
+    $code = AUTO_EXPIRE_NODE_TYPE . $type;
+    
+    if (variable_get($code . '_e', 0)) {
+      $days = variable_get($code . '_d', AUTO_EXPIRE_DAYS);
+      $warn = variable_get($code . '_w', AUTO_EXPIRE_WARN);
+      $purge = variable_get($code . '_p', AUTO_EXPIRE_PURGE);
+      
+      // Send out expiration warnings
+      if ($warn > 0) {
+        $subject = variable_get(AUTO_EXPIRE_EMAIL . 'warn_subject', '');
+        $body    = variable_get(AUTO_EXPIRE_EMAIL . 'warn_body',    '');
+        
+        $result = db_query('SELECT n.nid, n.title FROM {auto_expire} e, {node} n WHERE n.nid = e.nid AND n.status = 1 AND e.warned = 0 AND (FROM_UNIXTIME(e.expire) - INTERVAL %d DAY) <= NOW()', $warn);
+        
+        while ($node = db_fetch_object($result)) {
+          _auto_expire_notify_warning($node->nid, $node->title, $name->type, $days, $subject, $body);
+          
+          db_query('UPDATE {auto_expire} SET warned = 1 WHERE nid = %d', $node->nid);
+          
+          watchdog('auto_expire', 'Auto expire warning for node ' . $node->nid, WATCHDOG_NOTICE);
+        }
+      }
+      
+      // Expire
+      $subject = variable_get(AUTO_EXPIRE_EMAIL . 'expired_subject', '');
+      $body    = variable_get(AUTO_EXPIRE_EMAIL . 'expired_body',    '');
+        
+      $result = db_query('SELECT n.nid, n.title FROM {auto_expire} e, {node} n WHERE n.nid = e.nid AND n.status = 1 AND FROM_UNIXTIME(e.expire) <= NOW()');
+      
+      while ($node = db_fetch_object($result)) {
+        db_query('UPDATE {node} SET status = 0 WHERE nid = %d', $node->nid);
+        
+        _auto_expire_notify_expired($node->nid, $node->title, $name->type, $subject, $body);
+        
+        watchdog('auto_expire', 'Unpublishing node ' . $node->nid, WATCHDOG_NOTICE);
+      }
+      
+      // Purge
+      if ($purge > 0) {
+        $result = db_query('SELECT e.nid FROM {auto_expire} e, {node} n WHERE n.nid = e.nid AND n.status = 0 AND (FROM_UNIXTIME(e.expire) + INTERVAL %d DAY) <= NOW()', $purge);
+        
+        $cntPurged = 0;
+        
+        while ($nid = db_result($result)) {
+          $node = node_load($nid);
+          
+          /* copied from node_delete - to bypass node_access - cache_clear_all moved outside the loop */
+          db_query('DELETE FROM {node} WHERE nid = %d', $nid);
+          db_query('DELETE FROM {node_revisions} WHERE nid = %d', $nid);
+          
+          // Call the node-specific callback (if any):
+          node_invoke($node, 'delete');
+          node_invoke_nodeapi($node, 'delete');
+          
+          // Remove this node from the search index if needed.
+          if (function_exists('search_wipe')) {
+            search_wipe($nid, 'node');
+          }
+          /* end of copy */
+          
+          watchdog('auto_expire', "Auto expire purged node: $nid", WATCHDOG_NOTICE);
+          
+          $cntPurged++;
+        }
+        
+        if ($cntPurged > 0) {
+          // Clear the cache so an anonymous poster can see the node being deleted.
+          cache_clear_all();
+          
+          watchdog('auto_expire', "Auto expire purged $cntPurged node(s).", WATCHDOG_NOTICE);
+        }
+      }
+    }
+  }
+}
+
+// hook_nodeapi
+function auto_expire_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+  $code = AUTO_EXPIRE_NODE_TYPE . $node->type;
+  
+  if (variable_get($code . '_e', 0)) {
+    switch ($op) {
+      case 'insert':
+        $days = variable_get($code . '_d', 0);
+        
+        db_query('INSERT INTO {auto_expire} (nid, expire) VALUES (%d, %d)', $node->nid, $node->created + $days * 24 * 60 * 60);
+        
+        drupal_set_message(t('This %type will autoexpire in %days days.', array('%type' => node_get_types('name', $node), '%days' => $days)));
+        
+        break;
+      
+      case 'delete':
+        db_query('DELETE FROM {auto_expire} WHERE nid = %d', $node->nid);
+        break;
+    }
+  }
+}
+
+// hook_node_type
+function auto_expire_node_type($op, $info) {
+  switch ($op) {
+    case 'delete':
+      $code = AUTO_EXPIRE_NODE_TYPE . $info->type;
+      
+      variable_del($code . '_e');
+      variable_del($code . '_d');
+      variable_del($code . '_w');
+      variable_del($code . '_p');
+      
+      break;
+    
+    case 'update':
+      if (!empty($info->old_type) && $info->old_type != $info->type) {
+        $code_old = AUTO_EXPIRE_NODE_TYPE . $info->old_type;
+        $code_new = AUTO_EXPIRE_NODE_TYPE . $info->type;
+        
+        $expire = variable_get($code_old . '_e', 0);
+        $days   = variable_get($code_old . '_d', AUTO_EXPIRE_DAYS);
+        $warn   = variable_get($code_old . '_w', AUTO_EXPIRE_WARN);
+        $purge  = variable_get($code_old . '_p', AUTO_EXPIRE_PURGE);
+        
+        variable_set($code_new . '_e', $expire);
+        variable_set($code_new . '_d', $days);
+        variable_set($code_new . '_w', $warn);
+        variable_set($code_new . '_p', $purge);
+        
+        variable_del($code_old . '_e');
+        variable_del($code_old . '_d');
+        variable_del($code_old . '_w');
+        variable_del($code_old . '_p');
+      }
+      
+      break;
+  }
+}
+
+function _auto_expire_notify_warning($nid, $title, $type, $days, $subject, $body) {
+  $args = array(
+    '!type' => $type,
+    '!title' => $title,
+    '!url' => url('node/' . $nid, NULL, NULL, TRUE),
+    '!days' => $days,
+    '!site' => variable_get('site_name', ''),
+    '!siteurl' => url('<front>', NULL, NULL, TRUE),
+  );
+  
+  _auto_expire_notify($nid, 'auto_expire_warning', $subject, $body, $args);
+}
+
+function _auto_expire_notify_expired($nid, $title, $type, $subject, $body) {
+  $args = array(
+    '!type' => $type,
+    '!title' => $title,
+    '!site' => variable_get('site_name', ''),
+    '!siteurl' => url('<front>', NULL, NULL, TRUE),
+  );
+  
+  _auto_expire_notify($nid, 'auto_expire_expired', $subject, $body, $args);
+}
+
+function _auto_expire_notify($nid, $mailkey, $subject, $body, $args) {
+  if (!empty($subject)) {
+    $result = db_query('SELECT u.mail, u.status FROM {users} u, {node} n WHERE n.nid = %d AND n.uid = u.uid', $nid);
+    
+    $user = db_fetch_object($result);
+    
+    if ($user->status == 1) {
+      $subject = t($subject, $args);
+      $body  = t($body, $args);
+      
+      drupal_mail($mailkey, $user->mail, $subject, $body);
+    }
+  }
+}
+
+function _auto_expire_get_expire($nid) {
+  return db_result(db_query('SELECT expire FROM {auto_expire} WHERE nid = %d', $nid));
+}
+
+?>

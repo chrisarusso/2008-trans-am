@@ -1,0 +1,134 @@
+<?php
+// signature.module v1.1 for Drupal 5.0; author - ultraBoy@drupal.org;
+
+function signature_help($section='') {
+  switch ($section) {
+    case 'admin/modules#description':
+      return t('Manages users\' signatures.');
+  };
+}
+
+
+function signature_perm() {
+  return array('administer signature');
+}
+
+function signature_menu($may_cache) {
+	$items = array();
+	$items[] = array(
+    'path' => 'admin/settings/signature',
+    'title' => t('signature'),
+    'description' => t('Manages users\' signatures.'),
+    'callback' => 'drupal_get_form',
+    'callback arguments' => array('signature_admin_settings'),
+    'access' => user_access('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM, // optional
+   );
+	return $items;
+}
+function signature_admin_settings() {
+  $form['signature'] = array(
+    '#type' => 'fieldset',
+    '#description' => t('Show signatures with nodes and comments for: '),
+  );
+
+  foreach(node_get_types('names') as $type => $name) {
+    $form['signature']['signature_show_for_'.$type] = array(
+      '#type' => 'checkbox',
+      '#title' => $name,
+      '#return_value' => 1,
+      '#default_value' => variable_get('signature_show_for_'.$type, '0'),
+    );
+  }
+
+  $form['signature']['signature_template'] = array (
+    '#type' => 'textarea',
+    '#title' => 'Template for signatures:',
+    '#default_value' => variable_get('signature_template', "__________________________\n<br />%s"),
+    '#description' => '<strong>%s</strong> will be replaced with user\'s actual signature. Please note, all html tags will be filtered out.',
+  );
+
+   return system_settings_form($form);
+}
+
+function signature_form_alter($form_id, &$form) {
+//if signatures are disabled for all content types, hiding signature field in user profile settings 
+  if ($form_id == 'user_edit') {
+    $enabled = false;
+    foreach(node_get_types('names') as $type => $name) {
+      if (variable_get('signature_show_for_'.$type, '0')) {
+        $enabled = true;
+        break;
+      }
+    }
+    if (!$enabled) {
+      unset($form['comment_settings']);
+    }
+  }
+
+//cleaning signature in comment/reply
+  if ($form_id == 'comment_form') {
+    global $user;
+    if ($form['comment_filter']['comment']['#default_value'] == $user->signature ) {
+      $form['comment_filter']['comment']['#default_value'] = '';      
+  	}
+  }
+}
+
+
+function signature_nodeapi(&$node, $op, $teaser, $page) {
+  if (variable_get('signature_show_for_'.$node->type, '0')) {
+    switch ($op) {
+	
+      case 'load':
+        global $signature_node_type;
+        $signature_node_type = $node->type;
+        
+		$node->signature = db_result(db_query('SELECT signature FROM {users} WHERE uid = %d', $node->uid));
+        $node->body = $node->body . theme('signature', $node->signature);
+	      break;
+
+//	    case 'view':
+//	      $node->body = $node->body . theme('signature', $node->signature);
+//	      break;
+
+      case 'prepare':
+        $themed_signature = theme('signature', $node->signature);
+        if (substr($node->body, - strlen($themed_signature)) == $themed_signature) {
+          $node->body = substr($node->body, 0, strlen($node->body) - strlen($themed_signature));
+        }
+        break;
+	  }
+  }
+}
+
+
+function signature_comment(&$comment, $op) {
+//  $node_type = db_result(db_query('SELECT type FROM {node} WHERE nid = %d', $comment->nid));
+  global $signature_node_type;
+  
+  if ($op == 'view' && variable_get('signature_show_for_'.$signature_node_type, '0')) {
+    static $cache;
+    if (!isset($cache)) {
+      $result = db_query('SELECT u.uid, u.signature FROM {comments} c
+                            INNER JOIN {users} u ON c.uid = u.uid
+                            WHERE c.nid = %d AND c.status = 0 AND NOT(u.signature = "")
+                            GROUP BY u.uid', $comment->nid);
+      $cache = array();
+      while($row = db_fetch_object($result)) {
+        $cache[$row->uid] = $row->signature;
+      }
+    }
+    
+    if (isset($cache[$comment->uid])) {
+      $comment->comment .= theme('signature', $cache[$comment->uid]);
+    }
+  }
+}
+
+
+function theme_signature($signature) {
+  return sprintf("\n" . variable_get('signature_template', "__________________________\n<br />%s"), check_markup($signature));
+}
+
+?>

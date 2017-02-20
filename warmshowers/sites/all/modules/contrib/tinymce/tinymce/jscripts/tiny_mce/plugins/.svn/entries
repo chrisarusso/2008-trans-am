@@ -1,0 +1,247 @@
+8
+
+dir
+0
+http://opensvn.csie.org/warmshowers/website/trunk/sites/all/modules/contrib/tinymce/tinymce/jscripts/tiny_mce/plugins
+http://opensvn.csie.org/warmshowers
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+media
+dir
+
+
+
+add
+
+insertdatetime
+dir
+
+
+
+add
+
+noneditable
+dir
+
+
+
+add
+
+inlinepopups
+dir
+
+
+
+add
+
+emotions
+dir
+
+
+
+add
+
+iespell
+dir
+
+
+
+add
+
+save
+dir
+
+
+
+add
+
+advhr
+dir
+
+
+
+add
+
+layer
+dir
+
+
+
+add
+
+advimage
+dir
+
+
+
+add
+
+preview
+dir
+
+
+
+add
+
+directionality
+dir
+
+
+
+add
+
+visualchars
+dir
+
+
+
+add
+
+zoom
+dir
+
+
+
+add
+
+devkit
+dir
+
+
+
+add
+
+table
+dir
+
+
+
+add
+
+autosave
+dir
+
+
+
+add
+
+cleanup
+dir
+
+
+
+add
+
+advlink
+dir
+
+
+
+add
+
+print
+dir
+
+
+
+add
+
+nonbreaking
+dir
+
+
+
+add
+
+flash
+dir
+
+
+
+add
+
+fullpage
+dir
+
+
+
+add
+
+style
+dir
+
+
+
+add
+
+searchreplace
+dir
+
+
+
+add
+
+fullscreen
+dir
+
+
+
+add
+
+contextmenu
+dir
+
+
+
+add
+
+template
+dir
+
+
+
+add
+
+readme.txt
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+paste
+dir
+
+
+
+add
+
+xhtmlxtras
+dir
+
+
+
+add
+
+bbcode
+dir
+
+
+
+add
+

@@ -1,0 +1,6 @@
+; $Id$
+
+name = locationservices
+description = Provides a number of location-based and geocoding services and APIs
+version = "$Revision$"
+package = Warmshowers.org

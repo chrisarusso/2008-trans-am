@@ -1,0 +1,58 @@
+8
+
+dir
+31
+http://svn.wikicommunity.org/svn/wc/tags/wc-0.1.1/t
+http://svn.wikicommunity.org/svn/wc
+
+
+
+2008-05-02T00:19:03.091522Z
+2
+crusso
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+084f2c3f-334c-0410-b887-be28c7a04714
+
+maint
+dir
+
+inc
+dir
+
+README
+file
+
+
+
+
+2008-05-02T04:06:36.000000Z
+8402cd06d0fa3bd65877c6f020464573
+2008-05-02T00:19:03.091522Z
+2
+crusso
+
+00-test.t
+file
+
+
+
+
+2008-05-02T04:06:36.000000Z
+5a81115816f512db13dd0b1ad93e1230
+2008-05-02T00:19:03.091522Z
+2
+crusso
+

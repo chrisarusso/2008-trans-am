@@ -1,0 +1,1205 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/wC2/!svn/ver/23/trunk/Alt2/includes
+END
+SpecialAllpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialAllpages.php
+END
+XmlFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/XmlFunctions.php
+END
+DatabaseOracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/DatabaseOracle.php
+END
+FileRevertForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/FileRevertForm.php
+END
+SpecialUserrights.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUserrights.php
+END
+Xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/wC2/!svn/ver/3/trunk/Alt2/includes/Xml.php
+END
+SpecialRecentchangeslinked.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialRecentchangeslinked.php
+END
+ProxyTools.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/ProxyTools.php
+END
+LinkFilter.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/LinkFilter.php
+END
+Categoryfinder.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/Categoryfinder.php
+END
+ImageQueryPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/ImageQueryPage.php
+END
+ProtectionForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/ProtectionForm.php
+END
+CategoryPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/CategoryPage.php
+END
+SpecialImport.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialImport.php
+END
+ParserOutput.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/ParserOutput.php
+END
+Defines.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/includes/Defines.php
+END
+User.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/User.php
+END
+BagOStuff.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/BagOStuff.php
+END
+Article.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/23/trunk/Alt2/includes/Article.php
+END
+SiteStats.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/SiteStats.php
+END
+SpecialDisambiguations.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialDisambiguations.php
+END
+SpecialMostrevisions.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostrevisions.php
+END
+RecentChange.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/RecentChange.php
+END
+MimeMagic.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/MimeMagic.php
+END
+SpecialMostcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostcategories.php
+END
+GlobalFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/GlobalFunctions.php
+END
+ObjectCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/ObjectCache.php
+END
+RefreshLinksJob.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/RefreshLinksJob.php
+END
+WatchedItem.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/WatchedItem.php
+END
+OutputHandler.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/OutputHandler.php
+END
+LinkBatch.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/LinkBatch.php
+END
+SpecialLockdb.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialLockdb.php
+END
+SpecialPopularpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialPopularpages.php
+END
+StubObject.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/StubObject.php
+END
+Licenses.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/Licenses.php
+END
+MessageCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/MessageCache.php
+END
+EnotifNotifyJob.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/EnotifNotifyJob.php
+END
+SpecialUserlogin.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUserlogin.php
+END
+SpecialMostimages.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostimages.php
+END
+SpecialWhatlinkshere.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialWhatlinkshere.php
+END
+SpecialRecentchanges.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialRecentchanges.php
+END
+ImagePage.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/ImagePage.php
+END
+ProfilerStub.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/ProfilerStub.php
+END
+SpecialRevisiondelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialRevisiondelete.php
+END
+SpecialLonelypages.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialLonelypages.php
+END
+Linker.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/includes/Linker.php
+END
+SpecialUncategorizedpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUncategorizedpages.php
+END
+ExternalEdit.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/ExternalEdit.php
+END
+SpecialMostlinkedtemplates.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostlinkedtemplates.php
+END
+AjaxDispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/AjaxDispatcher.php
+END
+SearchEngine.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchEngine.php
+END
+Exif.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/Exif.php
+END
+Parser.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/includes/Parser.php
+END
+EmaillingJob.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/EmaillingJob.php
+END
+Setup.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/Setup.php
+END
+DateFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/DateFormatter.php
+END
+SpecialContributions.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialContributions.php
+END
+PatrolLog.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/PatrolLog.php
+END
+Feed.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/Feed.php
+END
+UserMailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/UserMailer.php
+END
+WatchlistEditor.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/WatchlistEditor.php
+END
+SpecialUnusedcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUnusedcategories.php
+END
+SpecialBlockme.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialBlockme.php
+END
+proxy_check.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/proxy_check.php
+END
+JobQueue.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/JobQueue.php
+END
+ZhClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/ZhClient.php
+END
+Export.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/includes/Export.php
+END
+EditPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/7/trunk/Alt2/includes/EditPage.php
+END
+Profiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/Profiler.php
+END
+SpecialUncategorizedtemplates.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUncategorizedtemplates.php
+END
+SpecialBlockip.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialBlockip.php
+END
+SpecialUpload.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUpload.php
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/.htaccess
+END
+HTMLForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/HTMLForm.php
+END
+SpecialWithoutinterwiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialWithoutinterwiki.php
+END
+SpecialUncategorizedimages.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUncategorizedimages.php
+END
+SearchPostgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchPostgres.php
+END
+DatabaseFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/DatabaseFunctions.php
+END
+MemcachedSessions.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/MemcachedSessions.php
+END
+OutputPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/OutputPage.php
+END
+SpecialSearchCity.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialSearchCity.php
+END
+CacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/CacheDependency.php
+END
+SpecialWatchlist.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialWatchlist.php
+END
+SpecialMovepage.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMovepage.php
+END
+SpecialConfirmemail.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialConfirmemail.php
+END
+Sanitizer.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/Sanitizer.php
+END
+SearchUpdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchUpdate.php
+END
+SpecialResetpass.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialResetpass.php
+END
+SpecialProtectedpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialProtectedpages.php
+END
+SpecialMostlinked.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostlinked.php
+END
+SpecialMIMEsearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMIMEsearch.php
+END
+SpecialNewimages.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialNewimages.php
+END
+SpecialMostlinkedcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialMostlinkedcategories.php
+END
+SpecialDoubleRedirects.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialDoubleRedirects.php
+END
+SpecialListredirects.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialListredirects.php
+END
+LinksUpdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/10/trunk/Alt2/includes/LinksUpdate.php
+END
+Hooks.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/Hooks.php
+END
+WebRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/WebRequest.php
+END
+SpecialEmailuser.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialEmailuser.php
+END
+WebStart.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/WebStart.php
+END
+SearchOracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchOracle.php
+END
+Revision.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/Revision.php
+END
+AutoLoader.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/AutoLoader.php
+END
+PageQueryPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/PageQueryPage.php
+END
+SpecialFewestrevisions.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialFewestrevisions.php
+END
+SearchTsearch2.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchTsearch2.php
+END
+SpecialAllmessages.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialAllmessages.php
+END
+Wiki.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/20/trunk/Alt2/includes/Wiki.php
+END
+mime.types
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/wC2/!svn/ver/3/trunk/Alt2/includes/mime.types
+END
+ChangesList.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/ChangesList.php
+END
+SpecialUndelete.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUndelete.php
+END
+SpecialNewpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialNewpages.php
+END
+MagicWord.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/MagicWord.php
+END
+AjaxFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/AjaxFunctions.php
+END
+SearchMySQL4.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/SearchMySQL4.php
+END
+SpecialImagelist.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialImagelist.php
+END
+AuthPlugin.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/AuthPlugin.php
+END
+DifferenceEngine.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/DifferenceEngine.php
+END
+SpecialIpblocklist.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialIpblocklist.php
+END
+Title.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/Title.php
+END
+SpecialExport.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialExport.php
+END
+SpecialLog.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialLog.php
+END
+FileDeleteForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/FileDeleteForm.php
+END
+RawPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/includes/RawPage.php
+END
+SpecialBrokenRedirects.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialBrokenRedirects.php
+END
+SpecialCategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialCategories.php
+END
+HTMLFileCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/HTMLFileCache.php
+END
+DatabasePostgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/DatabasePostgres.php
+END
+HTMLCacheUpdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/HTMLCacheUpdate.php
+END
+SpecialStatistics.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialStatistics.php
+END
+StreamFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/wC2/!svn/ver/3/trunk/Alt2/includes/StreamFile.php
+END
+Namespace.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/Namespace.php
+END
+ExternalStore.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/ExternalStore.php
+END
+SkinTemplate.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/SkinTemplate.php
+END
+SpecialSpecialpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialSpecialpages.php
+END
+SpecialPreferences.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialPreferences.php
+END
+SpecialUnlockdb.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUnlockdb.php
+END
+SpecialUnwatchedpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUnwatchedpages.php
+END
+DefaultSettings.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/DefaultSettings.php
+END
+ExternalStoreDB.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/wC2/!svn/ver/3/trunk/Alt2/includes/ExternalStoreDB.php
+END
+tidy.conf
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/tidy.conf
+END
+ParserOptions.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/ParserOptions.php
+END
+HttpFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/HttpFunctions.php
+END
+SpecialUserlogout.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUserlogout.php
+END
+WikiError.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/WikiError.php
+END
+Metadata.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/Metadata.php
+END
+SpecialLongpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialLongpages.php
+END
+SpecialUploadMogile.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUploadMogile.php
+END
+SpecialPrefixindex.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialPrefixindex.php
+END
+SquidUpdate.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/SquidUpdate.php
+END
+Block.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/Block.php
+END
+SiteConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SiteConfiguration.php
+END
+ProfilerSimple.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/ProfilerSimple.php
+END
+FileStore.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/FileStore.php
+END
+Credits.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/includes/Credits.php
+END
+PageHistory.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/PageHistory.php
+END
+CoreParserFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/CoreParserFunctions.php
+END
+ExternalStoreHttp.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/ExternalStoreHttp.php
+END
+QueryPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/QueryPage.php
+END
+Skin.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/Skin.php
+END
+ProfilerSimpleUDP.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/ProfilerSimpleUDP.php
+END
+MacBinary.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/MacBinary.php
+END
+LoadBalancer.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/LoadBalancer.php
+END
+FakeTitle.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/FakeTitle.php
+END
+SpecialUncategorizedcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUncategorizedcategories.php
+END
+ImageFunctions.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/ImageFunctions.php
+END
+SpecialPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialPage.php
+END
+LogPage.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/includes/LogPage.php
+END
+ParserCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/ParserCache.php
+END
+SpecialShortpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialShortpages.php
+END
+memcached-client.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/memcached-client.php
+END
+SpecialUnusedtemplates.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUnusedtemplates.php
+END
+SpecialVersion.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialVersion.php
+END
+ZhConversion.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/ZhConversion.php
+END
+Math.php
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/wC2/!svn/ver/3/trunk/Alt2/includes/Math.php
+END
+SpecialWantedcategories.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialWantedcategories.php
+END
+SpecialUnusedimages.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialUnusedimages.php
+END
+SearchMySQL.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/20/trunk/Alt2/includes/SearchMySQL.php
+END
+mime.info
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/mime.info
+END
+MediaTransformOutput.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/includes/MediaTransformOutput.php
+END
+WebResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/WebResponse.php
+END
+SpecialListusers.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialListusers.php
+END
+Pager.php
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/wC2/!svn/ver/3/trunk/Alt2/includes/Pager.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/Exception.php
+END
+SpecialBooksources.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialBooksources.php
+END
+HistoryBlob.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/HistoryBlob.php
+END
+SpecialAncientpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialAncientpages.php
+END
+AjaxResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/AjaxResponse.php
+END
+ImageGallery.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/wC2/!svn/ver/3/trunk/Alt2/includes/ImageGallery.php
+END
+SpecialRandomredirect.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialRandomredirect.php
+END
+SpecialWantedpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialWantedpages.php
+END
+Database.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/11/trunk/Alt2/includes/Database.php
+END
+SpecialDeadendpages.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialDeadendpages.php
+END
+SpecialSearch.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialSearch.php
+END
+IP.php
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/wC2/!svn/ver/3/trunk/Alt2/includes/IP.php
+END
+DjVuImage.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/DjVuImage.php
+END
+SpecialRandompage.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/wC2/!svn/ver/3/trunk/Alt2/includes/SpecialRandompage.php
+END
+LinkCache.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/wC2/!svn/ver/3/trunk/Alt2/includes/LinkCache.php
+END
+Utf8Case.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/wC2/!svn/ver/3/trunk/Alt2/includes/Utf8Case.php
+END
+StringUtils.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/wC2/!svn/ver/3/trunk/Alt2/includes/StringUtils.php
+END

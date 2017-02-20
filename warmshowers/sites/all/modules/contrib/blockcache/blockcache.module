@@ -1,0 +1,334 @@
+<?php
+// $Id: blockcache.module 371 2007-10-18 15:47:58Z rfay $
+
+/**
+ * @file
+ * The Bock Cache module creates a duplicate cached version of each of available blocks.
+ * 
+ * @version This is the version for Drupal 5.x
+ * 
+ * @author Jeff Robbins | Lullabot | www.lullabot.com
+ * 
+ */
+ 
+/**
+ * Implementation of hook_menu()
+ */
+function blockcache_menu($may_cache) {
+  $items = array();
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/settings/blockcache',
+      'title' => t('Block Cache'),
+      'description' => t('Enable feedback for admins when blocks content is refreshed.'),
+      'callback' => 'drupal_get_form',
+      'callback arguments' => 'blockcache_admin_settings',
+      'access' => user_access('administer site configuration'),
+     );
+  }
+  return $items;
+}
+
+/**
+ * Implementation of hook_block().
+ * 
+ * @todo research / QA if bc_life really works
+ */
+function blockcache_block($op = 'list', $delta = 0, $edit = array()) {
+  switch ($op) {
+  	case 'list':
+      return blockcache_get_blocks();
+    case 'configure':
+      $form['bc_type'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Cache type'),
+        '#options' => array('page' => t('Page specific'), 'user' => t('User specific')),
+        '#default_value' => variable_get('bc_type_'. $delta, array()),
+        '#description' => t('If the block content changes from page to page, select <em>page spefic</em>. If the content changes based on user permissions, access, or has user-specific information, select <em>user specific</em>.'),
+      );
+      $form['bc_life'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Cache lifetime'),
+        '#size' => 10,
+        '#default_value' => variable_get('bc_life_'. $delta, ''),
+        '#description' => t('Lifetime (in seconds) of this item in the cache. How often is the content of this block refreshed? Leave blank to refresh automatically when new content is created.'),
+      );
+      $form['bc_refresh'] = array(
+        '#type' => 'checkboxes',
+        '#title' => t('Refresh when'),
+        '#options' => array(
+          'node' => t('A node is added/updated/deleted'),
+          'comment' => t('A comment is added/updated/deleted'),
+          'user' => t('A user is added/updated/deleted'),
+          'login' => t('A user logs in our out'),
+        ),
+        '#default_value' => variable_get('bc_refresh_'. $delta, array('node', 'comment', 'user', 'login')),
+        '#description' => t('If the contents of this block updates with changes to the site, select which changes affect the block contents. If you are unsure, leave all checked. <strong>Notes:</strong><br />1) If none are checked AND cache lifetime is left blank, the contents of this block will NEVER refresh.<br />2) This setting will essentially <em>cut short</em> the cache lifetime set above when nodes/comments/users are changed. For instance, if you have comments selected here and the lifetime is set to 1800 (30 minutes) and your site gets comments every 2 minutes, the block will update every 2 minutes.'),
+      );
+      $r = db_fetch_object(db_query('SELECT * FROM {bc_blocks} WHERE my_delta = %d', $delta));
+      $form['bc_origlink'] = array(
+        '#value' => t("<div class=\"form-item\"><label>Further configuration:</label><p>The Block Cache module acts as a wrapper around the original block. Please visit <a href=\"%url\">the original block's configuration page</a> to change its configurations.</p></div>", array('%url' => url('admin/block/configure/'. $r->module .'/'. $r->mod_delta))),
+      );
+      if (module_exists('help')) {
+        $form['bc_help'] = array(
+          '#value' => t('<div class="form-item"><label>Help:</label><p>Find more help for the Block Cache module <a href="!help">here</a>.</p></div>', array('!help' => url('admin/help/blockcache'))),
+        );
+      }
+      return $form;
+    case 'save':
+      variable_set('bc_type_'. $delta, $edit['bc_type']);
+      variable_set('bc_life_'. $delta, trim($edit['bc_life']));
+      variable_set('bc_refresh_'. $delta, $edit['bc_refresh']);
+      // refresh the block to update the cache lifetimes
+      blockcache_refresh($delta);
+      break;
+    case 'view':
+      return blockcache_block_view($delta);
+  }
+}
+
+/**
+ * Implementation of hook_help().
+ */
+
+function blockcache_help($section) {
+  switch ($section) {
+    case 'admin/help#blockcache':
+      return t('<p>This module creates a cached version of each block. Block caching happens separately from page caching, so it will work for logged-in users whether or not page caching is enabled for the site. Cached blocks make just one call to the database and can therefore reduce the overhead required to render blocks that require complex queries and/or calculations such as some Views or Taxonomy-related blocks.</p>
+      
+<p>When the Block Cache module is enabled, administrators will see a duplicate "cached" version of each of the site\'s blocks. By enabling the cached version (and disabling the original version), you can display a block that is physically identical to the original, but is loaded from the cache rather than calculated for each page. There are several options for how and when the cache is refreshed.</p>
+
+<p>Click the \'configure\' link for each cached block to modify the parameters determining the criteria by which the cache gets displayed and refreshed.</p>
+
+<h3>Cached block configuration options:</h3>
+<dl>
+<dt>Page specific</dt>
+<dd>Each block is cached on a per page basis. A separate version of the block is saved into the cache for every page that it appears on. This is most appropriate for node-specific blocks such as "Author Information" which change (or don\'t appear) from page to page. Leave unchecked and all pages will display the same block content.</dd>
+
+<dt>User specific</dt>
+<dd>If the information in this block changes on a per-user basis enable this checkbox. Leave unchecked and all users will see the same block content.</dd>
+</dl>
+
+<h3>Cache lifetime:</h3>
+<p>For most blocks, you will want to leave this field blank. When the field is blank, cached blocks are only refreshed when new content (nodes or comments) are added to the site. This should be fine for most Views lists, taxonomy, or node-based blocks. However you will probably want to set a lifetime for things like "Who\'s Online", frequently updated RSS feeds from the aggregator.module, or other regularly updating non-node-based block content. The lifetime is entered in seconds and represents how often the block will be refreshed. For instance, setting this to 300 could update the "Who\'s Online" block every 5 minutes. Users that log in during that 5 minutes won\'t be displayed until the cache is refreshed and the block updates.</p>
+
+<h3>Refresh when:</h3>
+<dl>
+<dt>A node is added/updated/deleted</dt>
+<dd>When any node of any type is added/altered, the content of this block will refresh.</dd>
+
+<dt>A comment is added/updated/deleted</dt>
+<dd>When any comment is added/altered, the content of this block will refresh.</dd>
+
+<dt>A user is added/updated/deleted</dt>
+<dd>When any user information is added/altered, the content of this block will refresh.</dd>
+
+<dt>A user logs in or out</dt>
+<dd>When any user logs in or out of the site, the content of this block will refresh.</dd>
+</dl>
+
+<p>If the <em>Cache lifetime</em> is left blank and none of the <em>Refresh when</em> boxes are checked, <strong>the block content will never refresh</strong>.</p>
+
+<p>If both a <em>Cache lifetime</em> value is set and <em>Refresh when</em> options are selected, then the cache will be refreshed based on whichever comes first.</p>
+
+<h3>Additional notes</h3>
+
+<p>Note that many modules already include their own caching system and therefore using the cached version of these blocks may not provide a performance enhancement.</p>
+
+<p>Also note that the cached versions of blocks are essentially "wrappers" around the original block. You should visit the original block\'s configuration screen to change any of the original parameters for that block.</p>
+
+<h3>BlockCache setting:</h3>
+<p>On the module\'s <a href="!settings">settings page</a>, you can choose to display a message to administrators when a block is refreshed. This is useful when setting things up to get some feedback as to what is happening "behind the scenes" and make sure that the blocks are refreshing on a regular basis.</p>
+
+'. blockcache_version(), array('!settings' => url('admin/settings/blockcache')));
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi()
+ */
+function blockcache_nodeapi($node, $op) {
+  switch ($op) {
+    case 'insert':
+    case 'update':
+    case 'delete':
+      _blockcache_cleanup('node');
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_comment()
+ */
+function blockcache_comment($foo, $op) {
+  switch ($op) {
+    case 'insert':
+    case 'update':
+    case 'delete':
+      _blockcache_cleanup('comment');
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_user()
+ */
+function blockcache_user($op) {
+  switch ($op) {
+    case 'insert':
+    case 'update':
+    case 'delete':
+      _blockcache_cleanup('user');
+      break;
+    case 'login':
+    case 'logout':
+      _blockcache_cleanup('login');
+      break;
+  }
+}
+
+
+/**
+ * Implementation of hook_settings().
+ */
+function blockcache_admin_settings() {
+  $form['bc_debug'] = array(
+    '#type' => 'radios',
+    '#title' => t('Display cache refresh'),
+    '#description' => t('For testing and debugging. If enabled, a message will be shown to users with "administer nodes" privileges when cached blocks are refreshed.'),
+    '#options' => array(t('disabled'), t('enabled')),
+    '#default_value' => variable_get('bc_debug', 0),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Return a list of block objects
+ */
+function blockcache_get_blocks() {
+    
+  $blocks = array();
+  $result = db_query('SELECT * FROM {bc_blocks}');
+  // make an array to cross reference the modules' blocks with our delta for them
+  while($r = db_fetch_object($result)){
+    // $blocks_lookup is ALL of the blocks that have ever been seen
+    // this may include blocks from modules that are no longer enabled
+    // we want to save the preferences and delta for these blocks
+    $blocks_lookup[$r->module][$r->mod_delta] = $r->my_delta;
+  }
+  
+  foreach (module_implements('block') as $module) {
+    if ($module != 'blockcache') { // endless loop alert!
+      $mod_blocks = module_invoke($module, 'block', 'list');
+      if (is_array($mod_blocks)) {
+        foreach($mod_blocks as $mod_delta => $info) {
+          $delta = $blocks_lookup[$module][$mod_delta];
+          if (!$delta) {
+            // store new block reference
+            $delta = db_next_id('{bc_blocks}');
+            db_query('INSERT INTO {bc_blocks} (my_delta, module, mod_delta) VALUES (%d, "%s", "%s")', $delta, $module, $mod_delta);      
+          }
+          $blocks[$delta]['info'] = $info['info'] . t(' [[-CACHED-]]');
+          $blocks[$delta]['orig_info'] = $info['info'];
+        }
+      }
+    }
+  }
+  return $blocks;
+}
+
+/**
+ * View a cached block using hook_block().
+ *
+ * If the block is not cached or the cache is stale, get the info and stick it back into the cache.
+ */
+function blockcache_block_view($delta) {
+  $cache_name = _blockcache_get_name($delta);
+  $cached = cache_get($cache_name, 'cache_block');
+  if ($cached && ($cached->expire == CACHE_TEMPORARY || $cached->expire > time())) {
+    // fetch block from cache
+    $block = unserialize($cached->data);
+  }
+  else {
+    // cache block
+    $r = db_fetch_object(db_query('SELECT * FROM {bc_blocks} WHERE my_delta = %d', $delta));
+    $block = module_invoke($r->module, 'block', 'view', $r->mod_delta);
+    $cache = serialize($block);
+    $expire = is_numeric(variable_get('bc_life_'.$delta, '')) ? time() + variable_get('bc_life_'.$delta, '') : CACHE_TEMPORARY;
+    cache_set($cache_name, 'cache_block', $cache, $expire);
+    
+    // display debug message
+    if (variable_get('bc_debug', 0) && user_access('administer nodes')) {
+      drupal_set_message(t("Refreshed cache for module: %module delta: %delta subject: %subject as %cache", array('%module' => $r->module, '%delta' => $r->mod_delta, '%subject' => $block[subject], '%cache' => $cache_name)));
+    }
+  }
+  return $block;
+}
+
+
+function blockcache_refresh($delta){
+  $cache_name = 'bc_'. $delta;
+  cache_clear_all($cache_name, 'cache_block', TRUE);
+  if (variable_get('bc_debug', 0) && user_access('administer nodes')) {
+    drupal_set_message(t("Refreshed cache for blockcache delta: %delta", array('%delta' => $delta)));
+  }
+}
+
+function _blockcache_get_name($delta) {
+  global $base_root;
+  $vars = variable_get('bc_type_'. $delta, array());
+  $cache_name = 'bc_'. $delta .'::';
+  if (module_exists('locale')) {
+    global $locale;
+    $cache_name .= '_'. $locale;
+  }
+  if ($vars['user']) {
+    global $user;
+    $cache_name .= '_u'. $user->uid;
+  }
+  $cache_name .= '_'. $base_root;
+  if ($vars['page']) {
+    $cache_name .= request_uri();
+  }
+  return $cache_name;
+}
+
+function _blockcache_cleanup($type) {
+  $blocks = array();
+  $debug = variable_get('bc_debug', FALSE) && user_access('administer nodes');
+  $result = db_query('SELECT * FROM {bc_blocks}');
+  while ($r = db_fetch_object($result)) {
+    if (module_exists($r->module)) { 
+      $refresh = variable_get('bc_refresh_'. $r->my_delta, array($type => $type));
+      if ($refresh[$type]) {
+        $likes[] = 'cid LIKE "bc_'. db_escape_string($r->my_delta) .'::%"';
+        if ($debug) {
+          $info[] = t('module: %mod, delta: %delta', array('%mod' => $r->module, '%delta' => $r->mod_delta));
+        }
+      }
+    }
+  }
+  if (!empty($likes)) {
+    // implode and put together a LIKE query
+    $like = implode(' OR ', $likes);
+    // this contains SQL and variables have already been escaped so...
+    db_query("DELETE FROM {cache_block} WHERE $like");
+    if ($debug) {
+      drupal_set_message(t("Cleared block cache for ". implode(', ', $info)));
+    }
+  }
+}
+
+/**
+ * Implementation of hook_devel_caches() for Devel module
+ */
+function blockcache_devel_caches() {
+  return array('cache_block');
+}
+
+/**
+ * Display BlockCache version.
+ */
+function blockcache_version(){
+  return str_replace(array('$RCSf'.'ile:', ',v', '$Re'.'vision: ', '$Da'.'te: ', '$'), '', '<p style="font-size:x-small">$RCSfile: blockcache.module,v $ version: <b>$Revision: 1.7.2.4 $</b>, $Date: 2007/04/10 17:55:27 $</p>');
+}

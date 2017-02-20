@@ -1,0 +1,6 @@
+; $Id: user_location.info 378 2007-10-20 19:21:21Z rfay $
+name = user_location
+description = Add location info to a user
+version = "$Revision: 378 $"
+dependencies = activeselect ip2cc locationservices
+package = Warmshowers.org

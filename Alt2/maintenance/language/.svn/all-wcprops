@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language
+END
+validate.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/validate.php
+END
+messages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/messages.inc
+END
+rebuildLanguage.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/rebuildLanguage.php
+END
+messageTypes.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/messageTypes.inc
+END
+checkExtensions.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/checkExtensions.php
+END
+dumpMessages.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/dumpMessages.php
+END
+function-list.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/function-list.php
+END
+lang2po.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/lang2po.php
+END
+writeMessagesArray.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/writeMessagesArray.inc
+END
+checkLanguage.inc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/checkLanguage.inc
+END
+splitLanguageFiles.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/splitLanguageFiles.inc
+END
+langmemusage.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/langmemusage.php
+END
+digit2html.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/digit2html.php
+END
+diffLanguage.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/diffLanguage.php
+END
+alltrans.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/alltrans.php
+END
+checkLanguage.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/checkLanguage.php
+END
+splitLanguageFiles.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/splitLanguageFiles.php
+END
+transstat.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/transstat.php
+END
+date-formats.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/date-formats.php
+END
+languages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/wC2/!svn/ver/3/trunk/Alt2/maintenance/language/languages.inc
+END

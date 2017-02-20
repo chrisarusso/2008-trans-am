@@ -1,0 +1,62 @@
+<?php
+// $Id: inactive_user.install,v 1.1.4.1 2008/05/19 16:21:27 deekayen Exp $
+
+/**
+ * Implementation of hook_install().
+ */
+function inactive_user_install() {
+  switch ($GLOBALS['db_type']) {
+    case 'mysql':
+    case 'mysqli':
+      db_query("CREATE TABLE {inactive_users} (
+        uid int(1) unsigned NOT NULL default '0',
+        notified_admin int(1) unsigned NOT NULL default '0',
+        notified_user int(1) unsigned NOT NULL default '0',
+        warned_user_block_timestamp int(11) unsigned NOT NULL default '0',
+        notified_user_block int(1) unsigned NOT NULL default '0',
+        notified_admin_block int(1) unsigned NOT NULL default '0',
+        warned_user_delete_timestamp int(11) unsigned NOT NULL default '0',
+        protected int(1) unsigned NOT NULL default '0',
+        PRIMARY KEY (uid)
+        ) /*!40100 DEFAULT CHARACTER SET utf8 */;");
+      break;
+    case 'pgsql':
+      db_query("CREATE TABLE {inactive_users} (
+        uid integer NOT NULL default '0',
+        notified_admin smallint NOT NULL default '0',
+        notified_user smallint NOT NULL default '0',
+        warned_user_block_timestamp int_unsigned NOT NULL default '0',
+        notified_user_block smallint NOT NULL default '0',
+        notified_admin_block smallint NOT NULL default '0',
+        warned_user_delete_timestamp int_unsigned NOT NULL default '0',
+        protected smallint NOT NULL default '0',
+        PRIMARY KEY (uid)
+        );");
+      break;
+  }
+}
+
+/**
+ * Implemenation of hook_uninstall().
+ */
+function inactive_user_uninstall() {
+  db_query('DROP TABLE {inactive_users}');
+  variable_del('inactive_user_admin_email');
+  variable_del('inactive_user_auto_block');
+  variable_del('inactive_user_auto_block_warn');
+  variable_del('inactive_user_auto_delete');
+  variable_del('inactive_user_auto_delete_warn');
+  variable_del('inactive_user_block_notify_text');
+  variable_del('inactive_user_block_warn_text');
+  variable_del('inactive_user_delete_notify_text');
+  variable_del('inactive_user_delete_warn_text');
+  variable_del('inactive_user_notify');
+  variable_del('inactive_user_notify_admin');
+  variable_del('inactive_user_notify_block');
+  variable_del('inactive_user_notify_block_admin');
+  variable_del('inactive_user_notify_delete');
+  variable_del('inactive_user_notify_delete_admin');
+  variable_del('inactive_user_notify_text');
+  variable_del('inactive_user_preserve_content');
+  variable_del('inactive_user_timestamp');
+}

@@ -1,0 +1,4 @@
+; $Id$
+name = dev
+description = "Development modules for WarmShowers"
+version = "$Revision$"

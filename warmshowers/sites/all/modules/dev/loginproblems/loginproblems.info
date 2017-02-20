@@ -1,0 +1,5 @@
+; $Id: loginproblems.info 383 2007-10-20 19:28:46Z rfay $
+name = loginproblems
+description = Attempt to diagnose and pinpoint login problems, especially cookie-related problems
+version = "$Revision: 383 $"
+package = Warmshowers.org

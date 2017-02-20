@@ -1,0 +1,17 @@
+
+
+/* $Id$ */
+function select_textfield() {
+	var obj = $('#edit-textfield')[0];
+	obj.select();
+}
+
+
+$(document).ready( function() {
+	$("#wsmap_map").bind("loadMarkersComplete", 
+		function (event, message) {
+  			alert(message);
+		}
+		);
+} );
+	

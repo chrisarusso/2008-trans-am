@@ -1,0 +1,5 @@
+; $Id$
+name = loginproblems
+description = Attempt to diagnose and pinpoint login problems, especially cookie-related problems
+version = "$Revision$"
+package = Warmshowers.org
