@@ -8,7 +8,7 @@ var map = new google.maps.Map(document.getElementById('map'), {
 });
 
 // Retrieve markers from XML file
-$.get( "/marker.xml", function( data, status, xhr ) {
+$.get( "marker.xml", function( data, status, xhr ) {
   $xml =  $( $.parseXML( xhr.responseText ) );
   var markers = $xml.find("marker");
   var days = [];
