@@ -21,7 +21,7 @@ $.get( "marker.xml", function( data, status, xhr ) {
 
     if (i == 0) {
       var image = {
-        url: '/wcFinalSmall_60x54.png'
+        url: 'wcFinalSmall_60x54.png'
       };
 
       var beginning = new google.maps.Marker({
