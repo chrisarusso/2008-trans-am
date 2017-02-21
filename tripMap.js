@@ -70,7 +70,7 @@ $.get( "marker.xml", function( data, status, xhr ) {
 
 
   for(var i = 0;  i < days.length; i++) {
-    // Switch color each time
+    // Switch color each day
     var newLast = colorsArray.shift();
     colorsArray[colorsArray.length] = newLast;
     var polyline = new google.maps.Polyline({
@@ -97,7 +97,7 @@ function addEndingMarker(point){
       '<h1 id="firstHeading" class="firstHeading">The end!</h1>'+
       '<div id="bodyContent">'+
       'Four months and 6,000 miles later we arrived in San Diego.'+
-      'The <i>slightly</i> longer 250+ page printed version can be read at the <a href="/blog">blog</a>.'+
+      'The <i>slightly</i> longer 250+ page printed version can be read at the <a href="blog">blog</a>.'+
       '</div>';
 
   var infowindow = new google.maps.InfoWindow({
@@ -107,10 +107,7 @@ function addEndingMarker(point){
   var end = new google.maps.Marker({
     position: point,
     map: map,
-    title: 'Hello World!',
     animation: google.maps.Animation.DROP,
-    //icon: image,
-    title: "The motha-truckin' end!"
   });
 
   end.addListener('click', function() {
