@@ -1,6 +1,0 @@
-; $Id: adminsupport.info 377 2007-10-20 19:09:51Z rfay $
-name = adminsupport
-description = Warmshowers.org Administrative support, especially reports for Roger
-version = "$Revision: 377 $"
-dependencies = wsuser user_location
-package = Warmshowers.org

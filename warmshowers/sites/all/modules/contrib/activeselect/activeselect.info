@@ -1,8 +1,0 @@
-; $Id: activeselect.info 361 2007-10-18 13:35:52Z rfay $
-name = Active select
-description = Defines the activeselect form element, which allows modules to have AJAX-enabled select boxes.
-
-; Information added by drupal.org packaging script on 2007-04-10
-version = "5.x-1.x-dev"
-project = "activeselect"
-

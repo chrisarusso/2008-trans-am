@@ -1,9 +1,0 @@
-; $Id: compact_forms.info 361 2007-10-18 13:35:52Z rfay $
-name = Compact Forms
-description = "Makes form fields compact by overlaying the field label on top the field itself using jQuery."
-
-; Information added by drupal.org packaging script on 2007-07-29
-version = "5.x-1.0"
-project = "compact_forms"
-datestamp = "1185733505"
-

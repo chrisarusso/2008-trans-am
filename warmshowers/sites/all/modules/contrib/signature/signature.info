@@ -1,8 +1,0 @@
-; $Id: signature.info 361 2007-10-18 13:35:52Z rfay $
-name = Signature
-description = Manages users signatures.
-
-; Information added by drupal.org packaging script on 2007-03-11
-version = "5.x-1.x-dev"
-project = "signature"
-

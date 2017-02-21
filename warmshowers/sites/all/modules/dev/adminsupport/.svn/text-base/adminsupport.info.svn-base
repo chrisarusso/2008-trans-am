@@ -1,6 +1,0 @@
-; $Id$
-name = adminsupport
-description = Warmshowers.org Administrative support, especially reports for Roger
-version = "$Revision$"
-dependencies = wsuser user_location
-package = Warmshowers.org

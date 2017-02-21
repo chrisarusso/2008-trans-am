@@ -1,6 +1,0 @@
-; $Id$
-name = wsuser
-description = Warmshowers.org member attributes
-version = "$Revision$"
-dependencies = user_location locationservices 
-package = Warmshowers.org

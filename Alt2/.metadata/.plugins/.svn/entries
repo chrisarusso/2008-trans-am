@@ -1,106 +1,0 @@
-8
-
-dir
-41
-http://russeme.com/wC2/trunk/Alt2/.metadata/.plugins
-http://russeme.com/wC2
-
-
-
-2008-03-22T20:12:48.582093Z
-3
-crusso
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-1ae9c3a0-0b49-0410-aff6-fec406c295d1
-
-org.eclipse.wst.validation
-dir
-
-org.eclipse.wst.internet.cache
-dir
-
-org.eclipse.ui.intro
-dir
-
-org.eclipse.team.cvs.core
-dir
-
-org.eclipse.jdt.core
-dir
-
-org.eclipse.ltk.ui.refactoring
-dir
-
-org.eclipse.wst.server.core
-dir
-
-org.eclipse.core.runtime
-dir
-
-org.eclipse.ui.ide
-dir
-
-org.eclipse.debug.core
-dir
-
-org.eclipse.ui
-dir
-
-org.eclipse.php.core
-dir
-
-org.tigris.subversion.subclipse.ui
-dir
-
-org.eclipse.ltk.core.refactoring
-dir
-
-org.eclipse.jdt.launching
-dir
-
-org.tigris.subversion.subclipse.core
-dir
-
-org.eclipse.team.cvs.ui
-dir
-
-org.eclipse.jdt.ui
-dir
-
-org.eclipse.ui.workbench
-dir
-
-org.eclipse.update.ui
-dir
-
-org.eclipse.help.base
-dir
-
-org.eclipse.core.resources
-dir
-
-org.eclipse.debug.ui
-dir
-
-org.eclipse.php.ui
-dir
-
-org.eclipse.wst.xml.core
-dir
-
-org.eclipse.search
-dir
-

@@ -1,6 +1,0 @@
-; $Id$
-name = wsmap
-description = "Display all Warmshowers users on a google map"
-version = "$Revision$"
-dependencies = user_location wsuser ip2cc locationservices browscap
-package = Warmshowers.org

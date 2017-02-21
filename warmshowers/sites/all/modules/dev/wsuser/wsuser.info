@@ -1,6 +1,0 @@
-; $Id: wsuser.info 381 2007-10-20 19:26:41Z rfay $
-name = wsuser
-description = Warmshowers.org member attributes
-version = "$Revision: 381 $"
-dependencies = user_location locationservices 
-package = Warmshowers.org

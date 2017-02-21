@@ -1,86 +1,0 @@
-9
-
-dir
-503
-http://opensvn.csie.org/warmshowers/website/trunk/sites/all/modules/dev
-http://opensvn.csie.org/warmshowers
-
-
-
-2009-01-21T12:16:24.456982Z
-503
-rfay
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-5afa4065-acab-824d-b69e-cdd0b354c225
-
-adminsupport
-dir
-
-user_location
-dir
-
-experimenter
-dir
-
-wsmap
-dir
-
-wsuser
-dir
-
-dev.info
-file
-
-
-
-
-2009-02-18T02:13:05.000000Z
-4bf83b48c825061208abfc038a6f9780
-2007-10-18T16:11:33.066184Z
-372
-rfay
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-140
-
-manage_blocked
-dir
-
-locationservices
-dir
-
-loginproblems
-dir
-

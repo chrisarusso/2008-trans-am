@@ -1,5 +1,0 @@
-; $Id: experimenter.info 379 2007-10-20 19:22:26Z rfay $
-name = experimenter
-description = "expermentation module"
-version = "$Revision: 379 $"
-package = Warmshowers.org

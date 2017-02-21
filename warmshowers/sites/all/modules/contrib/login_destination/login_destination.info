@@ -1,8 +1,0 @@
-name = Login Destination
-description = Controls which URL users will be redirected upon login.
-version = VERSION
-
-; Information added by drupal.org packaging script on 2007-04-20
-version = "5.x-1.0"
-project = "login_destination"
-

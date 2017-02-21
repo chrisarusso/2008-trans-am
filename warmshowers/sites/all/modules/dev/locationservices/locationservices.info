@@ -1,6 +1,0 @@
-; $Id: locationservices.info 382 2007-10-20 19:28:05Z rfay $
-
-name = locationservices
-description = Provides a number of location-based and geocoding services and APIs
-version = "$Revision: 382 $"
-package = Warmshowers.org

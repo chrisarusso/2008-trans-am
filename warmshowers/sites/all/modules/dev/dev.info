@@ -1,4 +1,0 @@
-; $Id: dev.info 372 2007-10-18 16:11:33Z rfay $
-name = dev
-description = "Development modules for WarmShowers"
-version = "$Revision: 372 $"

@@ -1,34 +1,0 @@
-9
-
-dir
-503
-http://opensvn.csie.org/warmshowers/website/trunk/sites/all/modules
-http://opensvn.csie.org/warmshowers
-
-
-
-2009-01-21T12:16:24.456982Z
-503
-rfay
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-5afa4065-acab-824d-b69e-cdd0b354c225
-
-contrib
-dir
-
-dev
-dir
-
