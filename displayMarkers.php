@@ -15,6 +15,7 @@ $csv = array_map('str_getcsv', file('wc-outfile.csv'));
     <markers>';
     if(is_array($csv)){
       foreach($csv as $key => $val){
+        // This emits all 21,300+ points - we can easily reduce with modulus %
         echo "<marker time=\"{$val[4]}\" lat=\"{$val[1]}\" lon=\"{$val[2]}\" />\n";
       }
     }

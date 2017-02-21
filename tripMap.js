@@ -1,48 +1,59 @@
 
-/*var wcIcon = new GIcon();
-wcIcon.image = "http://wikicommunity.org/wcFinalSmall.png";
-wcIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
-wcIcon.iconSize = new GSize(60, 60);
-wcIcon.shadowSize = new GSize(22, 20);
-wcIcon.iconAnchor = new GPoint(6, 20);
-wcIcon.infoWindowAnchor = new GPoint(5, 1);
-*/
 
-var redIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#ff0000"});
-var blueIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#0000ff"});
-var yellowIcon = MapIconMaker.createMarkerIcon({width: 50, height: 50, primaryColor: "#ffff00"});
-var greenIcon  = MapIconMaker.createMarkerIcon({width: 50, height: 50, primaryColor: "#00ff00"});
-// Set up our GMarkerOptions object literal
-  /*
-mostRecentIcon = { icon:wcIcon }
-todayIcon = { icon:yellowIcon }
-oddIcon = { icon:blueIcon }
-evenIcon = { icon:redIcon }
-firstIcon = { icon:greenIcon }
-
-*/
 var colorsArray = ["#ff0000","#00ff00","#0000ff","#ffff00"];
 var center = {lat: 37.493138, lng: -97.459141};
-
 var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 4,
   center: center
 });
 
-
+// Retrieve markers from XML file
 $.get( "displayMarkers.php", function( data ) {
   $xml =  $( $.parseXML( data ) );
   var markers = $xml.find("marker");
-  // 4271 alert(markers.length);
   var days = [];
-  //var today = markers[markers.length - 1].getAttribute("time").split("/")[1];
-  //need to concat month and day
 
-
+  // Loop through markers and draw path
   for (var i = 0; i < markers.length; i++) {
     // day becomes 5/19 for May 19th
     var day = markers[i].getAttribute("time").split("/")[0] + markers[i].getAttribute("time").split("/")[1];
     var point = new google.maps.LatLng(parseFloat(markers[i].getAttribute("lat")),parseFloat(markers[i].getAttribute("lon")));
+
+    if (i == 0) {
+      var image = {
+        url: '/wcFinalSmall_60x54.png'
+      };
+
+      var beginning = new google.maps.Marker({
+        position: point,
+        map: map,
+        title: 'Hello World!',
+        animation: google.maps.Animation.DROP,
+        icon: image,
+        title: "The motha-truckin' beginning!"
+      });
+
+      var beginningString =
+          '<h1 id="firstHeading" class="firstHeading">The beginning!</h1>'+
+          '<div id="bodyContent">'+
+          'We ate, we pedaled, we conqured: starting in Key West, FL!'+
+          '</div>';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: beginningString
+      });
+
+      beginning.addListener('click', function() {
+        infowindow.open(map, beginning);
+      });
+    }
+    else if(i == (markers.length - 1)){
+
+      setTimeout(function() {
+        addEndingMarker(point);
+      }, 1500);
+
+    }
 
     if(day != previousPointDay){
       // Add a new day
@@ -54,13 +65,6 @@ $.get( "displayMarkers.php", function( data ) {
     }
 
     var previousPointDay = day;
-    //days[day][days[day].length] = point;
-
-    if(i==0){
-      //map.addOverlay(new GMarker(point, firstIcon));
-    }else if(i == (markers.length - 1)){
-      //map.addOverlay(new GMarker(point, mostRecentIcon));
-    }
 
   }
 
@@ -83,8 +87,34 @@ $.get( "displayMarkers.php", function( data ) {
       // Add points!
       path.push(days[i][p]);
     }
-
-    //var dayPath = new GPolyline(days[i], colorsArray[0] ,7,.7);
   }
 
 });
+
+function addEndingMarker(point){
+
+  var endString =
+      '<h1 id="firstHeading" class="firstHeading">The end!</h1>'+
+      '<div id="bodyContent">'+
+      'Four months and 6,000 miles later we arrived in San Diego.'+
+      'The <i>slightly</i> longer 250+ page printed version can be read at the <a href="/blog">blog</a>.'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: endString
+  });
+
+  var end = new google.maps.Marker({
+    position: point,
+    map: map,
+    title: 'Hello World!',
+    animation: google.maps.Animation.DROP,
+    //icon: image,
+    title: "The motha-truckin' end!"
+  });
+
+  end.addListener('click', function() {
+    infowindow.open(map, end);
+  });
+
+}
