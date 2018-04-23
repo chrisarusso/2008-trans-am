@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 81, August 7th 2008, beginning in Winchester Bay, Oregon' href='http://wikiblog.l/2008/08/25/day-81-august-7th-2008-beginning-in-winchester-bay-oregon/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/08/25/day-80-august-6th-2008-begiinning-in-somewhere-oregon/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=92' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F08%2F25%2Fday-80-august-6th-2008-begiinning-in-somewhere-oregon%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F08%2F25%2Fday-80-august-6th-2008-begiinning-in-somewhere-oregon%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-92 single-format-standard has-header-image colors-light">
@@ -125,7 +123,7 @@ img.emoji {
 			<article id="div-comment-379" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">NyRy</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://2.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">NyRy</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="http://wikiblog.l/2008/08/25/day-80-august-6th-2008-begiinning-in-somewhere-oregon/#comment-379">
@@ -172,8 +170,8 @@ xoxo</p>
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/08/25/day-80-august-6th-2008-begiinning-in-somewhere-oregon/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F08%2F25%2Fday-80-august-6th-2008-begiinning-in-somewhere-oregon%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -192,7 +190,7 @@ xoxo</p>
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

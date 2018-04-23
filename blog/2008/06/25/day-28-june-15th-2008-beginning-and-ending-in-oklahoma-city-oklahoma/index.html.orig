@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 29, June 16th 2008, beginning and ending in Oklahoma City again' href='http://wikiblog.l/2008/06/26/day-29-june-15th-2008-beginning-and-ending-in-oklahoma-city-again/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/06/25/day-28-june-15th-2008-beginning-and-ending-in-oklahoma-city-oklahoma/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=38' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F25%2Fday-28-june-15th-2008-beginning-and-ending-in-oklahoma-city-oklahoma%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F25%2Fday-28-june-15th-2008-beginning-and-ending-in-oklahoma-city-oklahoma%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-38 single-format-standard has-header-image colors-light">
@@ -169,8 +167,8 @@ You went to a bike shop for a beer?  I think breakfast is your favorite meal, es
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/06/25/day-28-june-15th-2008-beginning-and-ending-in-oklahoma-city-oklahoma/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F25%2Fday-28-june-15th-2008-beginning-and-ending-in-oklahoma-city-oklahoma%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -189,7 +187,7 @@ You went to a bike shop for a beer?  I think breakfast is your favorite meal, es
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

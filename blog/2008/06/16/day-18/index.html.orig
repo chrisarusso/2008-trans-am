@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 19, June 6th 2008, beginning in Liberty, Mississippi' href='http://wikiblog.l/2008/06/17/day-19-june-6th-2008-beginning-in-liberty-mississippi/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/06/16/day-18/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=25' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F16%2Fday-18%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F16%2Fday-18%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-25 single-format-standard has-header-image colors-light">
@@ -243,8 +241,8 @@ Jody</p>
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/06/16/day-18/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F06%2F16%2Fday-18%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -263,7 +261,7 @@ Jody</p>
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 95, August 21st 2008, beginning and ending in Fresno, California' href='http://wikiblog.l/2008/09/19/day-95-august-21st-2008-beginning-in-fresno-california/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/09/19/day-94-august-20th-2008-beginning-in-santa-cruz-california/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=125' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F19%2Fday-94-august-20th-2008-beginning-in-santa-cruz-california%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F19%2Fday-94-august-20th-2008-beginning-in-santa-cruz-california%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-125 single-format-standard has-header-image colors-light">
@@ -192,8 +190,8 @@ i know this because Kevin brought it to day care for &#8220;favorite movie day&#
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/09/19/day-94-august-20th-2008-beginning-in-santa-cruz-california/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F19%2Fday-94-august-20th-2008-beginning-in-santa-cruz-california%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -212,7 +210,7 @@ i know this because Kevin brought it to day care for &#8220;favorite movie day&#
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

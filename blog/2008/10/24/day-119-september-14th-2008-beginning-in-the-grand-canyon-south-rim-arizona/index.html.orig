@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 120, September 15th 2008, beginning in the Grand Canyon South Rim, Arizona' href='http://wikiblog.l/2008/10/24/say-120-september-15th-2008-beginning-in-the-grand-canyon-south-rim-arizona/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/10/24/day-119-september-14th-2008-beginning-in-the-grand-canyon-south-rim-arizona/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=213' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F24%2Fday-119-september-14th-2008-beginning-in-the-grand-canyon-south-rim-arizona%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F24%2Fday-119-september-14th-2008-beginning-in-the-grand-canyon-south-rim-arizona%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-213 single-format-standard has-header-image colors-light">
@@ -152,8 +150,8 @@ img.emoji {
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/10/24/day-119-september-14th-2008-beginning-in-the-grand-canyon-south-rim-arizona/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F24%2Fday-119-september-14th-2008-beginning-in-the-grand-canyon-south-rim-arizona%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -172,7 +170,7 @@ img.emoji {
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

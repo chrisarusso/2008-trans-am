@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='Day 87, August 13th 2008, beginning in Anchor Bay, California' href='http://wikiblog.l/2008/09/07/day-87-august-13th-2008-beginning-in-anchor-bay-california/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/09/06/day-86-august-12th-2008-beginning-in-piercy-california/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=98' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F06%2Fday-86-august-12th-2008-beginning-in-piercy-california%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F06%2Fday-86-august-12th-2008-beginning-in-piercy-california%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-98 single-format-standard has-header-image colors-light">
@@ -186,7 +184,7 @@ img.emoji {
 			<article id="div-comment-427" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://1.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Fred and Wilma (actually Donna)</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://1.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Fred and Wilma (actually Donna)</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="http://wikiblog.l/2008/09/06/day-86-august-12th-2008-beginning-in-piercy-california/#comment-427">
@@ -292,8 +290,8 @@ img.emoji {
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/09/06/day-86-august-12th-2008-beginning-in-piercy-california/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F09%2F06%2Fday-86-august-12th-2008-beginning-in-piercy-california%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -312,7 +310,7 @@ img.emoji {
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->

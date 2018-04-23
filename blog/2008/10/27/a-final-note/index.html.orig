@@ -48,10 +48,8 @@ img.emoji {
 <link rel='next' title='YouTube videos' href='http://wikiblog.l/2009/02/22/youtube-videos/' />
 <meta name="generator" content="WordPress 4.9.5" />
 <link rel="canonical" href="http://wikiblog.l/2008/10/27/a-final-note/" />
-<link rel='shortlink' href='http://wikiblog.l/?p=232' />
 <link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F27%2Fa-final-note%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F27%2Fa-final-note%2F&#038;format=xml" />
-<link rel="pingback" href="http://wikiblog.l/xmlrpc.php">
 </head>
 
 <body class="post-template-default single single-post postid-232 single-format-standard has-header-image colors-light">
@@ -256,7 +254,7 @@ img.emoji {
 			<article id="div-comment-5324" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Gary &amp; Carol</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://2.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Gary &amp; Carol</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="http://wikiblog.l/2008/10/27/a-final-note/#comment-5324">
@@ -304,7 +302,7 @@ xoxo</p>
 			<article id="div-comment-5781" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn"><a href='http://molly.ceglarski@gmail.com' rel='external nofollow' class='url'>Molly</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://1.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn"><a href='http://molly.ceglarski@gmail.com' rel='external nofollow' class='url'>Molly</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="http://wikiblog.l/2008/10/27/a-final-note/#comment-5781">
@@ -374,7 +372,7 @@ Nina was always there for me whenever I doubted  Chris and/or Paul.  I will neve
 			<article id="div-comment-5916" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Fred and Wilma (actually Donna)</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://1.gravatar.com/avatar/?s=100&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=200&#038;r=g 2x' class='avatar avatar-100 photo avatar-default' height='100' width='100' />						<b class="fn">Fred and Wilma (actually Donna)</b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="http://wikiblog.l/2008/10/27/a-final-note/#comment-5916">
@@ -418,8 +416,8 @@ Nina was always there for me whenever I doubted  Chris and/or Paul.  I will neve
 </li><!-- #comment-## -->
 		</ol>
 
-			<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2008/10/27/a-final-note/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="http://wikiblog.l/wp-login.php?redirect_to=http%3A%2F%2Fwikiblog.l%2F2008%2F10%2F27%2Fa-final-note%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+		
+		<p class="no-comments">Comments are closed.</p>
 	
 </div><!-- #comments -->
 
@@ -438,7 +436,7 @@ Nina was always there for me whenever I doubted  Chris and/or Paul.  I will neve
 			<div class="wrap">
 				
 <div class="site-info">
-	<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
