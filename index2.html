@@ -7,19 +7,19 @@ but wikiCommunity is not quite ready for its release, unlike Paul and Chris whos
 <br>
 <img src="wcFinalSmall.png">
 <br>
-In the meantime, <a href="http://blog.wikicommunity.org">check out the 
-blog</a>, or the <a 
-href="http://flickr.com/photos/9579724@N02/collections/72157605373359905/">pictures</a><br>
+In the meantime, <a href="https://blog.wikicommunity.org">check out the
+blog</a>, or the <a
+href="https://flickr.com/photos/9579724@N02/collections/72157605373359905/">pictures</a><br>
 
 <br>
 Real time tracking:<br>
-Suggestions on how to make the map better (i.e. coloring, time on each point ... I'm working on both)?  Please send to ideas to 
+Suggestions on how to make the map better (i.e. coloring, time on each point ... I'm working on both)?  Please send to ideas to
 suggestions@wikicommunity.org, thanks!<hr>
 
-  
- 
-    <script 
-src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA5rSiNSxNrO2ZRkz7Kn85chQgPieDRzevs-0NI2utdy8M2R4YMxSGzIvgElD5bCgZcpMdWYjjqrixrA"
+
+
+    <script
+src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA5rSiNSxNrO2ZRkz7Kn85chQgPieDRzevs-0NI2utdy8M2R4YMxSGzIvgElD5bCgZcpMdWYjjqrixrA"
       type="text/javascript"></script>
 
 <div style="text-align:center"><div id="map_canvas" style="width:90%;height:800px;"></div>
@@ -30,8 +30,8 @@ src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA5rSiNSxNrO2ZRk
 
 // Create our "wc" marker icon
 var wcIcon = new GIcon();
-wcIcon.image = "http://wikicommunity.org/wcFinalSmall.png";
-wcIcon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+wcIcon.image = "https://wikicommunity.org/wcFinalSmall.png";
+wcIcon.shadow = "https://labs.google.com/ridefinder/images/mm_20_shadow.png";
 wcIcon.iconSize = new GSize(50, 50);
 wcIcon.shadowSize = new GSize(22, 20);
 wcIcon.iconAnchor = new GPoint(6, 20);
@@ -39,7 +39,7 @@ wcIcon.infoWindowAnchor = new GPoint(5, 1);
 var redIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#ff0000"});
 var blueIcon = MapIconMaker.createMarkerIcon({width: 32, height: 32, primaryColor: "#0000ff"});
 var yellowIcon = MapIconMaker.createMarkerIcon({width: 50, height: 50, primaryColor: "#ffff00"});
-var greenIcon  = MapIconMaker.createMarkerIcon({width: 40, height: 40, 
+var greenIcon  = MapIconMaker.createMarkerIcon({width: 40, height: 40,
 primaryColor: "#00ff00"});
 // Set up our GMarkerOptions object literal
 
@@ -90,11 +90,11 @@ GDownloadUrl("displayMarkers.php", function(data, responseCode) {
     colorsArray[colorsArray.length] = newLast;
     map.addOverlay(dayPath);
 
-   GEvent.addListener(dayPath, "click", function() { 
+   GEvent.addListener(dayPath, "click", function() {
     var myHtml = "<b>kevin</b>";
     map.openInfoWindowHtml(days[i][0], myHtml)
     })
-  
+
   }
 
 var mostRecentLat = parseFloat(markers[(markers.length)-1].getAttribute("lat"));
@@ -120,15 +120,15 @@ map.setZoom(4);
 
 </script>
 <hr>
-Listened to some suggestions, thanks for your responses.  Timing and mileage to come!  
+Listened to some suggestions, thanks for your responses.  Timing and mileage to come!
 <hr>
-<img src="http://farm4.static.flickr.com/3149/2576201809_1930cfccc3.jpg">
-<img 
-src="http://farm4.static.flickr.com/3228/2518653034_00f32d7240.jpg">
-<img src="http://farm4.static.flickr.com/3053/2577032066_e7a767d980.jpg">
+<img src="https://farm4.static.flickr.com/3149/2576201809_1930cfccc3.jpg">
+<img
+src="https://farm4.static.flickr.com/3228/2518653034_00f32d7240.jpg">
+<img src="https://farm4.static.flickr.com/3053/2577032066_e7a767d980.jpg">
 <br>
-<a 
-href="http://flickr.com/photos/9579724@N02/collections/72157605373359905/">Click 
+<a
+href="https://flickr.com/photos/9579724@N02/collections/72157605373359905/">Click
 here</a> to see the rest of the pictures.
 
 </body>

@@ -3,35 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="profile" href="https://gmpg.org/xfn/11">
 
 <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <title>Day 9 &#8211; the wikiCommunity Experience</title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Feed" href="http://wikiblog.l/feed/" />
-<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Comments Feed" href="http://wikiblog.l/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Day 9 Comments Feed" href="http://wikiblog.l/2008/05/29/day-9/feed/" />
+<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Feed" href="https://wikiblog.l/feed/" />
+<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Comments Feed" href="https://wikiblog.l/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="the wikiCommunity Experience &raquo; Day 9 Comments Feed" href="https://wikiblog.l/2008/05/29/day-9/feed/" />
 <link rel='stylesheet' id='twentyseventeen-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C300i%2C400%2C400i%2C600%2C600i%2C800%2C800i&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-<link rel='stylesheet' id='twentyseventeen-style-css'  href='http://wikiblog.l/wp-content/themes/twentyseventeen/style.css?ver=4.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyseventeen-style-css'  href='https://wikiblog.l/wp-content/themes/twentyseventeen/style.css?ver=4.9.5' type='text/css' media='all' />
 <!--[if lt IE 9]>
-<link rel='stylesheet' id='twentyseventeen-ie8-css'  href='http://wikiblog.l/wp-content/themes/twentyseventeen/assets/css/ie8.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyseventeen-ie8-css'  href='https://wikiblog.l/wp-content/themes/twentyseventeen/assets/css/ie8.css?ver=1.0' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<script type='text/javascript' src='http://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/html5.js?ver=3.7.3'></script>
+<script type='text/javascript' src='https://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/html5.js?ver=3.7.3'></script>
 <![endif]-->
-<script type='text/javascript' src='http://wikiblog.l/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://wikiblog.l/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='http://wikiblog.l/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://wikiblog.l/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://wikiblog.l/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='Day 8' href='http://wikiblog.l/2008/05/29/day-8/' />
-<link rel='next' title='Day 10' href='http://wikiblog.l/2008/05/29/day-10/' />
+<script type='text/javascript' src='https://wikiblog.l/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://wikiblog.l/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://wikiblog.l/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wikiblog.l/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wikiblog.l/wp-includes/wlwmanifest.xml" />
+<link rel='prev' title='Day 8' href='https://wikiblog.l/2008/05/29/day-8/' />
+<link rel='next' title='Day 10' href='https://wikiblog.l/2008/05/29/day-10/' />
 <meta name="generator" content="WordPress 4.9.5" />
-<link rel="canonical" href="http://wikiblog.l/2008/05/29/day-9/" />
-<link rel="alternate" type="application/json+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F05%2F29%2Fday-9%2F" />
-<link rel="alternate" type="text/xml+oembed" href="http://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F05%2F29%2Fday-9%2F&#038;format=xml" />
+<link rel="canonical" href="https://wikiblog.l/2008/05/29/day-9/" />
+<link rel="alternate" type="application/json+oembed" href="https://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F05%2F29%2Fday-9%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://wikiblog.l/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwikiblog.l%2F2008%2F05%2F29%2Fday-9%2F&#038;format=xml" />
 </head>
 
 <body class="post-template-default single single-post postid-13 single-format-standard has-header-image colors-light">
@@ -43,28 +43,28 @@
 		<div class="custom-header">
 
 		<div class="custom-header-media">
-			<div id="wp-custom-header" class="wp-custom-header"><img src="http://wikiblog.l/wp-content/themes/twentyseventeen/assets/images/header.jpg" width="2000" height="1200" alt="the wikiCommunity Experience" /></div>		</div>
+			<div id="wp-custom-header" class="wp-custom-header"><img src="https://wikiblog.l/wp-content/themes/twentyseventeen/assets/images/header.jpg" width="2000" height="1200" alt="the wikiCommunity Experience" /></div>		</div>
 
 	<div class="site-branding">
 	<div class="wrap">
 
-		
+
 		<div class="site-branding-text">
-							<p class="site-title"><a href="http://wikiblog.l/" rel="home">the wikiCommunity Experience</a></p>
-			
+							<p class="site-title"><a href="https://wikiblog.l/" rel="home">the wikiCommunity Experience</a></p>
+
 							<p class="site-description">the cross-country bike-touring website-launching journey</p>
 					</div><!-- .site-branding-text -->
 
-		
+
 	</div><!-- .wrap -->
 </div><!-- .site-branding -->
 
 </div><!-- .custom-header -->
 
-		
+
 	</header><!-- #masthead -->
 
-	
+
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
 
@@ -72,12 +72,12 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			
+
 <article id="post-13" class="post-13 post type-post status-publish format-standard hentry category-uncategorized">
 		<header class="entry-header">
-		<div class="entry-meta"><span class="posted-on"><span class="screen-reader-text">Posted on</span> <a href="http://wikiblog.l/2008/05/29/day-9/" rel="bookmark"><time class="entry-date published updated" datetime="2008-05-29T11:10:01+00:00">May 29, 2008</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://wikiblog.l/author/admin/">admin</a></span></span></div><!-- .entry-meta --><h1 class="entry-title">Day 9</h1>	</header><!-- .entry-header -->
+		<div class="entry-meta"><span class="posted-on"><span class="screen-reader-text">Posted on</span> <a href="https://wikiblog.l/2008/05/29/day-9/" rel="bookmark"><time class="entry-date published updated" datetime="2008-05-29T11:10:01+00:00">May 29, 2008</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://wikiblog.l/author/admin/">admin</a></span></span></div><!-- .entry-meta --><h1 class="entry-title">Day 9</h1>	</header><!-- .entry-header -->
 
-	
+
 	<div class="entry-content">
 		<p>After rising up from Beverly Hills (the name of the city the rv park was in), we headed out of town to get some breakfast.Â  We rode for about 10 miles and got to a Dunkin Donuts where we stuffed our faces.Â  It was a good thing, because we wouldn&#8217;t have too much ahead of us for a while.</p>
 <p>The majority of the ride was through the woods.Â  This part of Florida&#8217;s main industry was logging.Â  The trees where systematically planted in a lattice that was very cool to see as we rode by.Â  Rows upon rows and columns upon columns of tall, thin trees seemed to go on forever.Â  It was a very natural, pine smelling area and was a pleasure to ride through.</p>
@@ -88,7 +88,7 @@
 <p>Life was good.</p>
 	</div><!-- .entry-content -->
 
-	
+
 </article><!-- #post-## -->
 
 <div id="comments" class="comments-area">
@@ -101,10 +101,10 @@
 			<article id="div-comment-20" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://2.gravatar.com/avatar/2be292d28fcee99a8f459297d7ef649a?s=100&#038;r=g' srcset='http://2.gravatar.com/avatar/2be292d28fcee99a8f459297d7ef649a?s=200&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />						<b class="fn"><a href='http://wikicommunity.org' rel='external nofollow' class='url'>Scary Mary</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+						<img alt='' src='https://2.gravatar.com/avatar/2be292d28fcee99a8f459297d7ef649a?s=100&#038;r=g' srcset='https://2.gravatar.com/avatar/2be292d28fcee99a8f459297d7ef649a?s=200&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' />						<b class="fn"><a href='https://wikicommunity.org' rel='external nofollow' class='url'>Scary Mary</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
-						<a href="http://wikiblog.l/2008/05/29/day-9/#comment-20">
+						<a href="https://wikiblog.l/2008/05/29/day-9/#comment-20">
 							<time datetime="2008-05-30T17:23:40+00:00">
 								May 30, 2008 at 5:23 pm							</time>
 						</a>
@@ -120,14 +120,14 @@
 </li><!-- #comment-## -->
 		</ol>
 
-		
+
 		<p class="no-comments">Comments are closed.</p>
-	
+
 </div><!-- #comments -->
 
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text">Post navigation</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://wikiblog.l/2008/05/29/day-8/" rel="prev"><span class="screen-reader-text">Previous Post</span><span aria-hidden="true" class="nav-subtitle">Previous</span> <span class="nav-title"><span class="nav-title-icon-wrapper"><svg class="icon icon-arrow-left" aria-hidden="true" role="img"> <use href="#icon-arrow-left" xlink:href="#icon-arrow-left"></use> </svg></span>Day 8</span></a></div><div class="nav-next"><a href="http://wikiblog.l/2008/05/29/day-10/" rel="next"><span class="screen-reader-text">Next Post</span><span aria-hidden="true" class="nav-subtitle">Next</span> <span class="nav-title">Day 10<span class="nav-title-icon-wrapper"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg></span></span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="https://wikiblog.l/2008/05/29/day-8/" rel="prev"><span class="screen-reader-text">Previous Post</span><span aria-hidden="true" class="nav-subtitle">Previous</span> <span class="nav-title"><span class="nav-title-icon-wrapper"><svg class="icon icon-arrow-left" aria-hidden="true" role="img"> <use href="#icon-arrow-left" xlink:href="#icon-arrow-left"></use> </svg></span>Day 8</span></a></div><div class="nav-next"><a href="https://wikiblog.l/2008/05/29/day-10/" rel="next"><span class="screen-reader-text">Next Post</span><span aria-hidden="true" class="nav-subtitle">Next</span> <span class="nav-title">Day 10<span class="nav-title-icon-wrapper"><svg class="icon icon-arrow-right" aria-hidden="true" role="img"> <use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use> </svg></span></span></a></div></div>
 	</nav>
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -138,7 +138,7 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
-				
+
 <div class="site-info">
 	(Somewhat) proudly converted from Wordpress to a static site using wget
 </div><!-- .site-info -->
@@ -151,11 +151,11 @@
 var twentyseventeenScreenReaderText = {"quote":"<svg class=\"icon icon-quote-right\" aria-hidden=\"true\" role=\"img\"> <use href=\"#icon-quote-right\" xlink:href=\"#icon-quote-right\"><\/use> <\/svg>"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='http://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/skip-link-focus-fix.js?ver=1.0'></script>
-<script type='text/javascript' src='http://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/global.js?ver=1.0'></script>
-<script type='text/javascript' src='http://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/jquery.scrollTo.js?ver=2.1.2'></script>
-<script type='text/javascript' src='http://wikiblog.l/wp-includes/js/wp-embed.min.js?ver=4.9.5'></script>
-<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<script type='text/javascript' src='https://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/skip-link-focus-fix.js?ver=1.0'></script>
+<script type='text/javascript' src='https://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/global.js?ver=1.0'></script>
+<script type='text/javascript' src='https://wikiblog.l/wp-content/themes/twentyseventeen/assets/js/jquery.scrollTo.js?ver=2.1.2'></script>
+<script type='text/javascript' src='https://wikiblog.l/wp-includes/js/wp-embed.min.js?ver=4.9.5'></script>
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-behance" viewBox="0 0 37 32">
 <path class="path1" d="M33 6.054h-9.125v2.214h9.125v-2.214zM28.5 13.661q-1.607 0-2.607 0.938t-1.107 2.545h7.286q-0.321-3.482-3.571-3.482zM28.786 24.107q1.125 0 2.179-0.571t1.357-1.554h3.946q-1.786 5.482-7.625 5.482-3.821 0-6.080-2.357t-2.259-6.196q0-3.714 2.33-6.17t6.009-2.455q2.464 0 4.295 1.214t2.732 3.196 0.902 4.429q0 0.304-0.036 0.839h-11.75q0 1.982 1.027 3.063t2.973 1.080zM4.946 23.214h5.286q3.661 0 3.661-2.982 0-3.214-3.554-3.214h-5.393v6.196zM4.946 13.625h5.018q1.393 0 2.205-0.652t0.813-2.027q0-2.571-3.393-2.571h-4.643v5.25zM0 4.536h10.607q1.554 0 2.768 0.25t2.259 0.848 1.607 1.723 0.563 2.75q0 3.232-3.071 4.696 2.036 0.571 3.071 2.054t1.036 3.643q0 1.339-0.438 2.438t-1.179 1.848-1.759 1.268-2.161 0.75-2.393 0.232h-10.911v-22.5z"></path>
