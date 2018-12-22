@@ -3837,8 +3837,8 @@ p > object:only-child {
 	.error404.has-sidebar #primary .page-content,
 	body.page-two-column:not(.archive) #primary .entry-content,
 	body.page-two-column #comments {
-		float: right;
-		width: 58%;
+		margin: 0 auto;
+		width: 740px;
 	}
 
 	.blog .site-main > article,
