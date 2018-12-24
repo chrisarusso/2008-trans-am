@@ -1559,7 +1559,7 @@ body {
 /* Site branding */
 
 .site-branding {
-	padding: 1em 0;
+	padding: 6em 0;
 	position: relative;
 	-webkit-transition: margin-bottom 0.2s;
 	transition: margin-bottom 0.2s;
@@ -2808,6 +2808,12 @@ img,
 video {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+	display: block;
+	margin: 2em auto
+}
+
+figure img {
+	margin-bottom: 0;
 }
 
 img.alignleft,
@@ -2848,7 +2854,7 @@ p > object:only-child {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: italic;
-	margin-bottom: 1.5em;
+	margin: 2em auto;
 	max-width: 100%;
 }
 
@@ -2860,6 +2866,7 @@ p > object:only-child {
 
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
+	text-align: center;
 }
 
 /* Media Elements */
@@ -3266,7 +3273,7 @@ p > object:only-child {
 	/* Site Branding */
 
 	.site-branding {
-		padding: 3em 0;
+		padding: 10em 0;
 	}
 
 	/* Front Page */
@@ -3376,6 +3383,7 @@ p > object:only-child {
 	/* Site Branding */
 
 	.site-branding {
+		padding: 16em 0;
 		margin-bottom: 0;
 	}
 
