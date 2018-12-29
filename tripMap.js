@@ -3,8 +3,9 @@
 var colorsArray = ["#ff0000","#00ff00","#0000ff","#ffff00"];
 var center = {lat: 37.493138, lng: -97.459141};
 var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 4,
-  center: center
+  zoom: 5,
+  center: center,
+  mapTypeId: 'satellite'
 });
 
 // Retrieve markers from XML file
